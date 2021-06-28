@@ -1,0 +1,17 @@
+# Final word
+
+
+<center>
+![](./imgs/tom-parsons-F5qVefeCrp8-unsplash.jpg){width=50%}
+<br>
+<br>
+**Thank you for following this training workshop for the FRS module !**
+<br>
+<br>
+</center>
+
+If you want to use it for your own research, you can find suggestion of parameterization methods in the article presenting the module [@hardyLANDISIIExtensionDynamically2021], as well as [the user guide](https://github.com/Klemet/LANDIS-II-Forest-Roads-Simulation-module/blob/master/LANDIS-II%20Forest%20Roads%20Simulation%20v1.1%20User%20Guide.pdf).
+
+If you have any questions related to the functionning of the module, you can send me an e-mail at [clem.hardy@outlook.fr](mailto:clem.hardy@outlook.fr).
+
+In case of issues or bugs, please indicate them in the ["issues" section of the GitHub repository for the FRS module](https://github.com/Klemet/LANDIS-II-Forest-Roads-Simulation-module/issues).

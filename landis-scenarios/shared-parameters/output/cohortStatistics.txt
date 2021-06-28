@@ -1,0 +1,30 @@
+LandisData "Output Cohort Statistics"
+
+Timestep 10
+
+>> I only want the max Site Age stat, so I won't take any Species Age Stat.
+>> I leave the exemple in case of.
+>> SpeciesAgeStats
+
+>> MapNames output/cohort-stats/{species}-{statistic}-{timestep}.img
+
+>> MAX querrubr pinustro << maximum age for each species
+
+SiteAgeStats
+
+MapNames output/cohort-stats/AGE-{statistic}-{timestep}.img
+
+>> UNCOMMENT ONE OF THE FOLLOWING TO ACTIVATE IT
+MAX << maximum age across all species on site
+>> AVG << Average age across all species on site
+>> MED << median age across all species on site
+>> SD << standard deviation age for all spp on site
+>> RICH <<count of cohorts
+>> EVEN <<evenness
+
+>> I only want the max Site Age stat, so I won't take any Site Species Stat.
+>> I leave the exemple in case of.
+>> SiteSpeciesStats
+
+>> MapNames output/cohort-stats/SPP-{statistic}-{timestep}.img
+>> RICH <<count of species

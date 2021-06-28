@@ -1,0 +1,92 @@
+---
+title: "The FRS Module Training Workshop"
+author: "Clément Hardy"
+date: "`r Sys.Date()`"
+url: 'https://github.com/Klemet/Workshop-FRS-Module'
+github-repo: "Klemet/Workshop-FRS-Module"
+cover-image: "./imgs/Logo Module FRS.png"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [bibliography-frs-module-workshop.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "This webpage contains the content of a training workshop for the Forest Roads Simulation (FRS) module developed for the LANDIS-II model."
+---
+
+# Welcome {-}
+
+<center>
+**Welcome to the training workshop of the FRS module !**
+</br>
+</br>
+
+
+![](./imgs/Logo Module FRS.png)
+</br>
+</br>
+</br>
+</center>
+
+The **Forest Roads Simulation (FRS) module** is an extension of the LANDIS-II Forest Landscape Model (FLM). It was created so as to **help researchers in ecology to take into account the constructions of forest roads** when studying the impacts of forest management on forest landscapes.
+
+* * *
+
+**Before you start :**
+
+- `r emo::ji("black_nib")` *Change the appearance of the page to your liking by clicking the `A` button at the top left of the screen.*
+- `r emo::ji("arrow_left")` `r emo::ji("arrow_right")` *Move between the pages of the workshop by using the right and left arrows of your keyboard, or by using the table of content on your left.*
+- `r emo::ji("clock4")` *Plan 3 to 4 hours of reading and exercises if you want to read everything in details.*
+
+**Happy reading !**
+
+* * *
+
+## Objectives
+
+**This workshop is here to train you to use the FRS module for your own research**, and to understand :
+
+- `r emo::ji("check")` How the FRS module functions.
+- `r emo::ji("check")` How to parameterize the FRS module.
+- `r emo::ji("check")` How to visualize and analyse the outputs of the FRS module.
+
+## Plan
+
+**This web page contains the content of the workshop**, which is organized into **three parts** :
+
+1. A presentation of the FRS module.
+2. An exercice to create the parameter files for a simulation using the FRS module.
+3. An exercise to visualise and analyse the outputs of simulations using the FRS module.
+
+## Prerequisites
+
+In order to do the exercices of the workshop, you will need the following software installed on your computer :
+
+- [LANDIS-II v. 7](http://www.landis-ii.org/install)
+  - [Age-only Succession Extension v. 5.2](https://github.com/LANDIS-II-Foundation/Extension-Age-Only-Succession/raw/master/deploy/installer/LANDIS-II-V7%20Age%20Only%20Succession%205.2-setup.exe)
+  - [Base Harvest Extension v. 5.1](https://github.com/LANDIS-II-Foundation/Extension-Base-Harvest/raw/master/deploy/installer/LANDIS-II-V7%20Base%20Harvest%205.1-setup.exe)
+  - [FRS module v. 1.2](https://github.com/Klemet/LANDIS-II-Forest-Roads-Simulation-module/releases/download/1.2/LANDIS-II-V7.Forest.Road.Simulation.module.1.2-setup.exe)
+- [QGIS 3.X](https://qgis.org)
+- [R](https://www.r-project.org/) or [R studio](https://www.rstudio.com/)
+  - Package `gtools`
+  - Package `dplyr`
+  - Package `raster`
+  - Package `landscapemetrics`
+
+> `r emo::ji("light_bulb")` To install all of these R packages at once, use the command `install.packages("gtools", "dplyr", "raster", "landscapemetrics")` in R.
+
+## Presenter
+
+<center>
+</br>
+
+
+![](./imgs/clement.png)
+</br>
+<span style="font-family:Lato; font-size:30px;">**Clément Hardy**</span>
+</br>
+</br>
+</center>
+
+I am a PhD student in forest ecology, under the supervision of [Elise Filotas](http://elisefilotas.ca/en/home/) and [Christian Messier](www.cef-cfr.ca/index.php?n=Membres.ChristianMessier?userlang=en).
+
+I am also the developer of the FRS module, and my PhD subject concerns the long-term and large scale impacts of uneven-aged management. If you want to learn more about it, check out my [GitHub page](https://github.com/Klemet) !

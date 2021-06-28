@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Final word | The FRS Module Training Workshop</title>
+  <meta name="description" content="This webpage contains the content of a training workshop for the Forest Roads Simulation (FRS) module developed for the LANDIS-II model." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Final word | The FRS Module Training Workshop" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://github.com/Klemet/Workshop-FRS-Module" />
+  <meta property="og:image" content="https://github.com/Klemet/Workshop-FRS-Module/./imgs/Logo Module FRS.png" />
+  <meta property="og:description" content="This webpage contains the content of a training workshop for the Forest Roads Simulation (FRS) module developed for the LANDIS-II model." />
+  <meta name="github-repo" content="Klemet/Workshop-FRS-Module" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Final word | The FRS Module Training Workshop" />
+  
+  <meta name="twitter:description" content="This webpage contains the content of a training workshop for the Forest Roads Simulation (FRS) module developed for the LANDIS-II model." />
+  <meta name="twitter:image" content="https://github.com/Klemet/Workshop-FRS-Module/./imgs/Logo Module FRS.png" />
+
+<meta name="author" content="Clément Hardy" />
+
+
+<meta name="date" content="2021-06-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="03-results-analysis.html"/>
+<link rel="next" href="05-references.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">FRS module workshop</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#objectives"><i class="fa fa-check"></i>Objectives</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#plan"><i class="fa fa-check"></i>Plan</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prerequisites"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#presenter"><i class="fa fa-check"></i>Presenter</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html"><i class="fa fa-check"></i>Presentation</a>
+<ul>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html#why-are-forest-roads-so-important"><i class="fa fa-check"></i>Why are forest roads so important ?</a></li>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html#the-frs-module"><i class="fa fa-check"></i>The FRS module</a>
+<ul>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html#goals-of-the-frs-module"><i class="fa fa-check"></i>Goals of the FRS module</a></li>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html#structure-of-the-frs-module"><i class="fa fa-check"></i>Structure of the FRS module</a></li>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html#solving-the-mtap"><i class="fa fa-check"></i>Solving the MTAP</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html#the-functioning-of-the-frs-module"><i class="fa fa-check"></i>The functioning of the FRS module</a>
+<ul>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html#initialisation-phase"><i class="fa fa-check"></i>Initialisation phase</a></li>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html#during-the-simulation"><i class="fa fa-check"></i>During the simulation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html"><i class="fa fa-check"></i>Parameterization</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#ressources-needed"><i class="fa fa-check"></i>Ressources needed</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#looking-at-the-frs-module-parameter-file"><i class="fa fa-check"></i>Looking at the FRS module parameter file</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#exercice-filling-the-rest-of-the-parameter-file"><i class="fa fa-check"></i>Exercice : filling the rest of the parameter file</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-time-step"><i class="fa fa-check"></i>1. The time step</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-heuristic"><i class="fa fa-check"></i>2. The heuristic</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-skidding-distance"><i class="fa fa-check"></i>3. The skidding distance</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-raster-of-buildable-areas"><i class="fa fa-check"></i>4. The raster of buildable areas</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-initial-road-network-map"><i class="fa fa-check"></i>5. The initial road network map</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-basal-distance-cost-and-the-coarse-elevation-cost"><i class="fa fa-check"></i>6. The basal distance cost, and the coarse elevation cost</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-elevation-raster"><i class="fa fa-check"></i>7. The elevation raster</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-coarse-water-raster"><i class="fa fa-check"></i>8. The coarse water raster</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-coarse-water-cost"><i class="fa fa-check"></i>9. The coarse water cost</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-road-types"><i class="fa fa-check"></i>10. The road types</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-flux-thresholds-for-each-road-type"><i class="fa fa-check"></i>11. The flux thresholds for each road type</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-multiplicative-cost-values-for-each-road-type"><i class="fa fa-check"></i>12. The multiplicative cost values for each road type</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-maximum-age-for-each-road-type"><i class="fa fa-check"></i>13. The maximum age for each road type</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#correction"><i class="fa fa-check"></i>Correction</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html"><i class="fa fa-check"></i>Analyzing simulation results</a>
+<ul>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#ressources-needed-1"><i class="fa fa-check"></i>Ressources needed</a></li>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#understanding-the-two-scenarios"><i class="fa fa-check"></i>Understanding the two scenarios</a></li>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#looking-at-the-cost-map-generated-by-the-frs-module"><i class="fa fa-check"></i>Looking at the cost map generated by the FRS module</a>
+<ul>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#with-only-the-basal-distance-cost"><i class="fa fa-check"></i>With only the basal distance cost</a></li>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#with-elevation-costs-included"><i class="fa fa-check"></i>With elevation costs included</a></li>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#with-elevation-and-water-bodies-included"><i class="fa fa-check"></i>With elevation and water bodies included</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#launching-the-simulations"><i class="fa fa-check"></i>Launching the simulations</a></li>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#looking-at-the-outputs-with-qgis"><i class="fa fa-check"></i>Looking at the outputs with QGIS</a></li>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#analyzing-the-results-with-r"><i class="fa fa-check"></i>Analyzing the results with R</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="04-ending.html"><a href="04-ending.html"><i class="fa fa-check"></i>Final word</a></li>
+<li class="chapter" data-level="" data-path="05-references.html"><a href="05-references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The FRS Module Training Workshop</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="final-word" class="section level1">
+<h1>Final word</h1>
+<center>
+<img src="imgs/tom-parsons-F5qVefeCrp8-unsplash.jpg" style="width:50.0%" />
+<br>
+<br>
+<strong>Thank you for following this training workshop for the FRS module !</strong>
+<br>
+<br>
+</center>
+<p>If you want to use it for your own research, you can find suggestion of parameterization methods in the article presenting the module <span class="citation">(<a href="#ref-hardyLANDISIIExtensionDynamically2021" role="doc-biblioref">Hardy et al. 2021</a>)</span>, as well as <a href="https://github.com/Klemet/LANDIS-II-Forest-Roads-Simulation-module/blob/master/LANDIS-II%20Forest%20Roads%20Simulation%20v1.1%20User%20Guide.pdf">the user guide</a>.</p>
+<p>If you have any questions related to the functionning of the module, you can send me an e-mail at <a href="mailto:clem.hardy@outlook.fr">clem.hardy@outlook.fr</a>.</p>
+<p>In case of issues or bugs, please indicate them in the <a href="https://github.com/Klemet/LANDIS-II-Forest-Roads-Simulation-module/issues">“issues” section of the GitHub repository for the FRS module</a>.</p>
+
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-hardyLANDISIIExtensionDynamically2021" class="csl-entry">
+Hardy, Clément, Christian Messier, Elise Filotas, and Osvaldo Valeria. 2021. <span>“A <span>LANDIS</span>-<span>II</span> Extension to Dynamically Simulate a Network of Forest Roads.”</span> <em>Environmental Modelling and Software</em>.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="03-results-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="05-references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["frs-module-workshop.pdf", "frs-module-workshop.epub"],
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

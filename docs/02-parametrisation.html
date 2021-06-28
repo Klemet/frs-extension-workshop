@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Parameterization | The FRS Module Training Workshop</title>
+  <meta name="description" content="This webpage contains the content of a training workshop for the Forest Roads Simulation (FRS) module developed for the LANDIS-II model." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Parameterization | The FRS Module Training Workshop" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://github.com/Klemet/Workshop-FRS-Module" />
+  <meta property="og:image" content="https://github.com/Klemet/Workshop-FRS-Module/./imgs/Logo Module FRS.png" />
+  <meta property="og:description" content="This webpage contains the content of a training workshop for the Forest Roads Simulation (FRS) module developed for the LANDIS-II model." />
+  <meta name="github-repo" content="Klemet/Workshop-FRS-Module" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Parameterization | The FRS Module Training Workshop" />
+  
+  <meta name="twitter:description" content="This webpage contains the content of a training workshop for the Forest Roads Simulation (FRS) module developed for the LANDIS-II model." />
+  <meta name="twitter:image" content="https://github.com/Klemet/Workshop-FRS-Module/./imgs/Logo Module FRS.png" />
+
+<meta name="author" content="Clément Hardy" />
+
+
+<meta name="date" content="2021-06-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="01-presentation.html"/>
+<link rel="next" href="03-results-analysis.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">FRS module workshop</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#objectives"><i class="fa fa-check"></i>Objectives</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#plan"><i class="fa fa-check"></i>Plan</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prerequisites"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#presenter"><i class="fa fa-check"></i>Presenter</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html"><i class="fa fa-check"></i>Presentation</a>
+<ul>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html#why-are-forest-roads-so-important"><i class="fa fa-check"></i>Why are forest roads so important ?</a></li>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html#the-frs-module"><i class="fa fa-check"></i>The FRS module</a>
+<ul>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html#goals-of-the-frs-module"><i class="fa fa-check"></i>Goals of the FRS module</a></li>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html#structure-of-the-frs-module"><i class="fa fa-check"></i>Structure of the FRS module</a></li>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html#solving-the-mtap"><i class="fa fa-check"></i>Solving the MTAP</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html#the-functioning-of-the-frs-module"><i class="fa fa-check"></i>The functioning of the FRS module</a>
+<ul>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html#initialisation-phase"><i class="fa fa-check"></i>Initialisation phase</a></li>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html#during-the-simulation"><i class="fa fa-check"></i>During the simulation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html"><i class="fa fa-check"></i>Parameterization</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#ressources-needed"><i class="fa fa-check"></i>Ressources needed</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#looking-at-the-frs-module-parameter-file"><i class="fa fa-check"></i>Looking at the FRS module parameter file</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#exercice-filling-the-rest-of-the-parameter-file"><i class="fa fa-check"></i>Exercice : filling the rest of the parameter file</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-time-step"><i class="fa fa-check"></i>1. The time step</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-heuristic"><i class="fa fa-check"></i>2. The heuristic</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-skidding-distance"><i class="fa fa-check"></i>3. The skidding distance</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-raster-of-buildable-areas"><i class="fa fa-check"></i>4. The raster of buildable areas</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-initial-road-network-map"><i class="fa fa-check"></i>5. The initial road network map</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-basal-distance-cost-and-the-coarse-elevation-cost"><i class="fa fa-check"></i>6. The basal distance cost, and the coarse elevation cost</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-elevation-raster"><i class="fa fa-check"></i>7. The elevation raster</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-coarse-water-raster"><i class="fa fa-check"></i>8. The coarse water raster</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-coarse-water-cost"><i class="fa fa-check"></i>9. The coarse water cost</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-road-types"><i class="fa fa-check"></i>10. The road types</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-flux-thresholds-for-each-road-type"><i class="fa fa-check"></i>11. The flux thresholds for each road type</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-multiplicative-cost-values-for-each-road-type"><i class="fa fa-check"></i>12. The multiplicative cost values for each road type</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-maximum-age-for-each-road-type"><i class="fa fa-check"></i>13. The maximum age for each road type</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#correction"><i class="fa fa-check"></i>Correction</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html"><i class="fa fa-check"></i>Analyzing simulation results</a>
+<ul>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#ressources-needed-1"><i class="fa fa-check"></i>Ressources needed</a></li>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#understanding-the-two-scenarios"><i class="fa fa-check"></i>Understanding the two scenarios</a></li>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#looking-at-the-cost-map-generated-by-the-frs-module"><i class="fa fa-check"></i>Looking at the cost map generated by the FRS module</a>
+<ul>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#with-only-the-basal-distance-cost"><i class="fa fa-check"></i>With only the basal distance cost</a></li>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#with-elevation-costs-included"><i class="fa fa-check"></i>With elevation costs included</a></li>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#with-elevation-and-water-bodies-included"><i class="fa fa-check"></i>With elevation and water bodies included</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#launching-the-simulations"><i class="fa fa-check"></i>Launching the simulations</a></li>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#looking-at-the-outputs-with-qgis"><i class="fa fa-check"></i>Looking at the outputs with QGIS</a></li>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#analyzing-the-results-with-r"><i class="fa fa-check"></i>Analyzing the results with R</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="04-ending.html"><a href="04-ending.html"><i class="fa fa-check"></i>Final word</a></li>
+<li class="chapter" data-level="" data-path="05-references.html"><a href="05-references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The FRS Module Training Workshop</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="parameterization" class="section level1">
+<h1>Parameterization</h1>
+<p>In this section, we will learn to parameterize the FRS module properly, in order to use it in a simple LANDIS-II simulation.</p>
+<p>As you will see, this will require some skills in GIS software, in order to generates the raster maps needed by the module.</p>
+<p>To that end, we will fill a parameter file for the FRS module as an exercice, doing it step by step.</p>
+<div id="ressources-needed" class="section level2">
+<h2>Ressources needed</h2>
+<p>In order to follow the exercise of this section, it is important that you have the following software installed on your computer :</p>
+<ul>
+<li><a href="http://www.landis-ii.org/install">LANDIS-II v. 7</a>
+<ul>
+<li><a href="https://github.com/LANDIS-II-Foundation/Extension-Age-Only-Succession/raw/master/deploy/installer/LANDIS-II-V7%20Age%20Only%20Succession%205.2-setup.exe">Age-only Succession Extension v. 5.2</a></li>
+<li><a href="https://github.com/LANDIS-II-Foundation/Extension-Base-Harvest/raw/master/deploy/installer/LANDIS-II-V7%20Base%20Harvest%205.1-setup.exe">Base Harvest Extension v. 5.1</a></li>
+<li><a href="https://github.com/Klemet/LANDIS-II-Forest-Roads-Simulation-module/releases/download/1.2/LANDIS-II-V7.Forest.Road.Simulation.module.1.2-setup.exe">FRS module v. 1.2</a></li>
+</ul></li>
+<li><a href="https://qgis.org">QGIS 3.X</a></li>
+<li><a href="https://www.r-project.org/">R</a> or <a href="https://www.rstudio.com/">R studio</a>
+<ul>
+<li>Package <code>gtools</code></li>
+<li>Package <code>dplyr</code></li>
+<li>Package <code>raster</code></li>
+<li>Package <code>landscapemetrics</code></li>
+</ul></li>
+</ul>
+<blockquote>
+<p>💡 To install all of these R packages at once, use the command <code>install.packages("gtools", "dplyr", "raster", "landscapemetrics")</code> in R.</p>
+</blockquote>
+<p>In addition, <strong>you need to download the data necessary for the exercices</strong>: <a href="https://github.com/Klemet">💾 Click here</a> !</p>
+</div>
+<div id="looking-at-the-frs-module-parameter-file" class="section level2">
+<h2>Looking at the FRS module parameter file</h2>
+<p>Go into the folder that you’ve downloaded, containing the files necessary for the exercice of the workshop. Then, go into the subfolder <code>shared-parameters</code>, and then <code>disturbances</code>.</p>
+<p>In this folder, you’ll find two files : one is the parameter file that we will fill throughout this exercice (<code>roads.txt</code>), and the second being the correction (<code>roads_correction.txt</code>).</p>
+<p>Open <code>roads.txt</code> and look at its contents. As you can see, the outline of the parameter file is already written. Some parameters are also already filled so that you can focus on the important ones.</p>
+<pre><code>&gt;&gt; To be read properly, the parameter file must contain the parameters in this order.
+
+&gt;&gt;------------------------------------------------------------------------
+&gt;&gt; BASIC PARAMETERS
+
+LandisData &quot;Forest Roads Simulation&quot;
+
+Timestep
+
+HeuristicForNetworkConstruction
+
+SkiddingDistance
+
+LoopingBehavior No
+
+OutputsOfRoadNetworkMaps ./output/disturbances/roads/roadNetwork.tif
+OutputsOfRoadLog ./output/disturbances/roads/
+
+&gt;&gt;------------------------------------------------------------------------
+&gt;&gt; INPUT RASTERS AND COST PARAMETERS
+&gt;&gt; Only the initial road network raster and the distance cost are
+&gt;&gt; essential. If you do not want to use one of the cost for the path-
+&gt;&gt; -finding, just indicate “none” as the parameter value for the raster
+&gt;&gt; location, and “0” for the value of the associated cost.
+
+&gt;&gt; These parameters are essential for the module to function
+RasterOfBuildableZones
+InitialRoadNetworkMap
+DistanceCost
+
+CoarseElevationRaster
+
+CoarseElevationCosts
+&gt;&gt; Lower elevation      Upper elevation        Additional
+&gt;&gt;    threshold            threshold             value
+
+&gt;&gt; These parameters are optional, but can improve predictions
+FineElevationRaster None
+
+CoarseWaterRaster
+CoarseWaterCost
+
+FineWaterRaster None
+
+SoilsRaster None
+&gt;&gt;------------------------------------------------------------------------
+&gt;&gt; ROAD TYPE THRESHOLDS AND MULTIPLICATION VALUES
+&gt;&gt; These parameters are all essential to the functioning of the
+&gt;&gt; extension.
+SimulationOfRoadAging Yes
+SimulationOfWoodFlux  Yes
+
+RoadTypes
+&gt;&gt; Lower Wood Flux      Upper Wood Flux        Road type     Multiplicative       Maximum age         Road Type
+&gt;&gt;    threshold            threshold               ID          Cost Value      Before destruction      Name
+
+RoadTypesForExitingWood
+&gt;&gt; Road type   Road Type
+&gt;&gt;    ID        Name
+      8         Sawmill
+      9         MainRoadNetworkPaved</code></pre>
+<p>Let’s look at the parameters that are already set:</p>
+<ul>
+<li><code>LandisData</code> is simply a parameter indicating to LANDIS-II that this parameter file is related to the FRS module.</li>
+<li>The <code>LoopingBehavior</code> parameter enables or disables the creation of loops in the network. In this exercice, we will keep it disabled. If you want to know more about how the looping algorithm functions and how to parameterize it, we refer you to the article presenting the module <span class="citation">(<a href="#ref-hardyLANDISIIExtensionDynamically2021" role="doc-biblioref">Hardy et al. 2021</a>)</span>, as well as <a href="https://github.com/Klemet/LANDIS-II-Forest-Roads-Simulation-module/blob/master/LANDIS-II%20Forest%20Roads%20Simulation%20v1.1%20User%20Guide.pdf">the user guide</a>.</li>
+<li><code>OutputsOfRoadNetworkMaps</code> and <code>OutputsOfRoadLog</code> indicate where the output rasters and log of the module will be saved, relative to the location of the LANDIS-II scenario file.</li>
+<li><code>FineElevationRaster</code>, <code>FineWaterRaster</code> and <code>SoilsRaster</code> are parameters indicating the location of the raster maps of topographic obstacles, streams and type of soils are located respectively. We will not use those in this exercice; therefore, they are all set to <code>none</code>. This is possible as the FRS module only requires the <code>RasterOfBuildableZones</code>, <code>InitialRoadNetworkMap</code>, <code>DistanceCost</code>, <code>CoarseElevationRaster</code> and <code>CoarseElevationCosts</code> cost parameters to function. The rest are optional.</li>
+<li><code>SimulationOfRoadAging</code> and <code>SimulationOfWoodFlux</code> enable the simulation of road aging and wood fluxes respectively.</li>
+<li><code>RoadTypesForExitingWood</code> is a table of parameters indicating the road type ID of the different exit points that can be found in our road landscape. <strong>Remember that exit points are places where the harvested wood can be delivered to</strong>. Here, two type of exit points are defined : sawmills and the main, paved road network. Since they have the ID <code>8</code> and <code>9</code>, that means that every pixel in the initial road network map with the value <code>8</code> or <code>9</code> will be read by the FRS module as exit points. <strong>Also remember that every road landscape must initially contain exit points, and that their location do not change throughout the simulation</strong>.</li>
+</ul>
+<p>Now, let’s fill the remaining parameters one by one. <strong>You can directly write fill out the parameters in the <code>road.txt</code> file and save it as you go</strong>.</p>
+</div>
+<div id="exercice-filling-the-rest-of-the-parameter-file" class="section level2">
+<h2>Exercice : filling the rest of the parameter file</h2>
+<div id="the-time-step" class="section level3">
+<h3>1. The time step</h3>
+<p>The time step of the FRS module should always be the same as the time step of the harvest extension that is chosen. This way, the FRS module always activates right after the harvest module have defined newly harvested areas, so that forest roads are constructed at the same timestep as the harvesting.</p>
+<p>As the base harvest extension is parametrized with a time step of <code>10</code> years, this time step will be the same for the FRS module.</p>
+</div>
+<div id="the-heuristic" class="section level3">
+<h3>2. The heuristic</h3>
+<p>The FRS module proposes 3 different heuristics for the user : <code>Closestfirst</code>, <code>Farthestfirst</code>, and <code>Random</code>.</p>
+<p><strong>Different heuristics will result in different forest road networks</strong>. From our experience as developers of the FRS module, using a different heuristic might affect some values (like specific fragmentation indices), but affect others much less or in an insignificant way (like the road density in the landscape). Tests made during the development of the module on existing cuts have revealed that the <code>Closestfirst</code> heuristic was best at predicting the location of real forest roads. We hypothesize that this is because forest roads are often constructed to nearest targets/harvested areas first by road engineers or forestry compagnies.</p>
+<p>We therefore recommend the <code>Closestfirst</code> heuristics, and will use it here.</p>
+</div>
+<div id="the-skidding-distance" class="section level3">
+<h3>3. The skidding distance</h3>
+<p><strong>The skidding distance is very important parameter that will heavily influence the road density of the simulated landscape</strong>. Indeed, as long as a road pixel is present near a recently harvested cell, no roads will be created to this cell: it will be considered that the wood is simply skidded toward the nearby road. Therefore, as the skidding distance parameter gets smaller, more road pixels will be created to cover the recently harvested areas.</p>
+<p>Skidding possibilities can depend on the region of interest, the topography, and the methods or technologies available. Currently, the FRS module uses a constant skidding distance for all of the landscape, and all of the simulation. Therefore, you should get informed as to what skidding methods are used in your landscape of interest. Your skidding distance can also serve to avoid taking into account skidding trails that are not large or permanent enough to be considered roads.</p>
+<p>For this exercice, we will use a skidding distance of <code>200</code>m, which roughly corresponds to the maximum skidding distance observed in Quebec, where our simulated landscape is <span class="citation">(<a href="#ref-roaceaEffetsCoupesPartielles2011" role="doc-biblioref">Roa Cea 2011</a>)</span>.</p>
+</div>
+<div id="the-raster-of-buildable-areas" class="section level3">
+<h3>4. The raster of buildable areas</h3>
+<p>Legislation in place can prevent forest roads from being built in certains areas. This needs to be taken into account, so that the FRS module can avoid these areas.</p>
+<p>The raster of buildable areas is a simple raster map that must have, <strong>like any raster map used by the FRS module, the same projection, extent and resolution as the other raster maps used by the LANDIS-II simulation</strong>. It contains <code>0</code> for pixels where roads cannot be built; and <code>1</code> for pixels where they can.</p>
+<p>In the case of this exercice, we will allow roads to be created everywhere in the landscape. Therefore, our raster of buildable areas will be filled with <code>1</code>.</p>
+<p>To create such a raster, open QGIS, and follow the instructions :</p>
+<ul>
+<li>Add the <code>initial-communities.tif</code> raster used in our simulation into QGIS. It is found in the <code>shared-rasters</code> folder that you download earlier.</li>
+<li>Go into the <code>Raster</code> tab, and select <code>Raster calculator</code>.</li>
+<li>In the <code>Raster calculator</code> tool, select the initial communities raster, and click the button <code>Selected Layer Extent</code>.</li>
+<li>In the field at the bottom of the <code>Raster calculator</code>, just put the number <code>1</code>.</li>
+<li>In the <code>Output layer</code> field at the top right of the Raster Calculator, input <code>Buildable_zones_temp</code> or any other name.</li>
+<li>Click on the <code>Ok</code> button. The resulting raster should be filled with values of <code>1</code>.</li>
+<li>To finish preparing the raster for LANDIS-II, go again into the <code>Raster</code> tab, and select <code>Conversion</code>, and then the <code>Translate</code> tool.</li>
+<li>In the <code>Translate</code> tool, select the raster you just created.</li>
+<li>In the field <code>Output data type</code> of the <code>Translate</code> tool (near the bottom), choose <code>int16</code>, and click <code>Run</code>.</li>
+<li>Save the resulting raster (named <code>Converted</code>) by right clicking on it in the layers menu on the left of the screen, and selecting <code>Export</code> and <code>Save as</code>.</li>
+<li>When you save the raster, <strong>be sure to save it with the same CRS than the initial communities raster</strong> (by default, it should be the same).</li>
+<li>Save the raster with the name <code>buildable_zones.tif</code> into the <code>shared-rasters</code> folder.</li>
+<li><strong>Don’t close QGIS yet</strong>. We will need it for other operations !</li>
+</ul>
+<p>Now, you should be able to write the path to the <code>buildable_zones.tif</code> raster into the <code>roads.txt</code> file.</p>
+<p>The path should look like this in <code>roads.txt</code>:</p>
+<hr />
+<details>
+<summary>
+<strong>Click for Answer</strong>
+</summary>
+<br>
+<code>RasterOfBuildableZones "../shared-rasters/buildable_zones.tif"</code>
+</details>
+<hr />
+</div>
+<div id="the-initial-road-network-map" class="section level3">
+<h3>5. The initial road network map</h3>
+<p>The initial road network map describes the state of the road landscape at the beginning of the simulation.</p>
+<p>A pixel with a value of <code>0</code> implies that no road exist in the pixel. <strong>All other values to be used in this raster must correspond to a road type ID or an exit point ID</strong> described in the parameter file of the module.</p>
+<p>The user can define as many road type IDs or exit point IDs as they want, so as to adapt to the road types or classification that might exist in the landscape.</p>
+<p>Here, we will use a shapefile that contains the roads that exist in our landscape. The shapefile is in the folder <code>spatial-data</code>, and is named <code>road_network.shp</code>.</p>
+<p>Start by adding <code>road_network.shp</code> in the layers of QGIS. Then, right click on the resulting layer in the layer menu, and choose the option <code>Open attribute table</code>. This table shows the attributes associated with every line in the shapefile. You will see that it has a <code>road_type</code> attribute, with three different possible values : <code>Primary</code>, <code>Secondary</code> and <code>Tertiary</code>. We will have to transform this value into single numbers, that we will use as road type IDs, and then “burn” them into a raster map.</p>
+<p>During our exercices, we will use the following classification, and the following road type IDs:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Road type attribute (in the shapefile)</th>
+<th align="center">Road type ID (for the FRS module)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Primary</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">Secondary</td>
+<td align="center">2</td>
+</tr>
+<tr class="odd">
+<td align="center">Tertiary</td>
+<td align="center">3</td>
+</tr>
+</tbody>
+</table>
+<p>To create the new attribute table containing the road type IDs for each line of the road layer, follow these instructions in QGIS:</p>
+<ul>
+<li>While in the window of the attribute table, click on the small pencil icon on the top left of the window to put the layer into edition mode.</li>
+<li>Click on the <code>Open field calculator</code> button on the top of the window (the one representing an abacus), or press <code>CTRL + i</code> while in the window of the attribute table.</li>
+<li>Name the new field <code>TYPE_ID</code>, and choose the field type <code>While number (integer)</code>, with an <code>output field length</code> of 2.</li>
+<li>In the <code>Expression</code> field, type or paste the following expression :</li>
+</ul>
+<p><code>if(  "ROAD_TYPE" = 'PRIMARY', 1,  if(  "ROAD_TYPE" = 'SECONDARY', 2,  if(  "ROAD_TYPE" =  'MAIN_PAVED' , 9, 3)))</code></p>
+<ul>
+<li>If you are not used to such expressions to calculate attributes values of shapefiles, take the time to read the expression. Notice that it is made of three <code>if</code> statements, one in the other. The first <code>if</code> states that if the <code>ROAD_TYPE</code> field for a particular line is equal to the value <code>PRIMARY</code>, we want this new <code>ROAD_TYPE</code> field to have the value <code>1</code>. If not, we make a second test : if the value is <code>SECONDARY</code>, we want the value <code>2</code>. If not, we make a third test : if the value is <code>MAIN_PAVED</code>, it’s an exit point; and so, we want the value <code>9</code> (as it will be an exit point of the “Main paved road network” category). If not, the value will have to be <code>TERTIARY</code>, and so we want the value <code>3</code> in return.</li>
+<li>Click the <code>Ok</code> button of the field calculator window.</li>
+<li>Once that you are back in the attribute table window, click again on the pencil icon to finish the edition, saving the changes in the process.</li>
+</ul>
+<p>Now, we can “burn” the <code>TYPE_ID</code> attribute associated to each line into raster cells. To that end, follow the instructions:</p>
+<ul>
+<li>Go into the <code>Raster</code> tab, then <code>Conversion</code>, then choose the <code>Rasterize (Vector to raster)</code>.</li>
+<li>As an input layer, choose the <code>road_network</code> layer that you just edited.</li>
+<li>In <code>Field to use for a burn-in value</code>, select <code>TYPE_ID</code>.</li>
+<li>Do not choose a fixed value to burn in the raster.</li>
+<li>Now, we have to give information about the resolution and extent of the resulting raster. In <code>Output raster size units</code>, choose <code>Georeferenced units</code>. In <code>Horizontal resolution</code> and <code>Vertical resolution</code>, input <code>100</code> (as the cells of the raster we use are 100m x 100m).</li>
+<li>In <code>Output extent</code>, click on the <code>...</code> button on the right, and choose <code>Calculate from layer</code>. Choose the <code>initial-communities</code> layer.</li>
+<li>Down in the window, change the <code>Output data type</code> to <code>int16</code>.</li>
+<li>Click <code>Run</code>.</li>
+<li>Save the resulting raster in the folder shared-raster with the name <code>initial_road_network.tif</code></li>
+</ul>
+<p>The resulting raster should look like this:</p>
+<hr />
+<details>
+<summary>
+<strong>Click for Answer</strong>
+</summary>
+<br>
+<img src="imgs/initial_road_network_correction_visualisation.JPG" />
+</details>
+<hr />
+<p>Now that the raster is done, you should be able to write the path to the <code>initial_road_network.tif</code> into the <code>roads.txt</code> file.</p>
+<p>The path should look like this in <code>roads.txt</code>:</p>
+<hr />
+<details>
+<summary>
+<strong>Click for Answer</strong>
+</summary>
+<br>
+<code>InitialRoadNetworkMap "../shared-rasters/initial_road_network.tif"</code>
+</details>
+<hr />
+</div>
+<div id="the-basal-distance-cost-and-the-coarse-elevation-cost" class="section level3">
+<h3>6. The basal distance cost, and the coarse elevation cost</h3>
+<p><strong>Parameters related to the construction cost of forest roads have an important effect on their paths</strong>, as they will be least-cost paths chosen by the pathfinding algorithm.</p>
+<p>These costs can be difficult to gather, as they are dependent on a high variety of factors, and are not very studied. However, a good estimation of such costs can be obtained by directly asking experts, or by gathering cost data from government agencies or forestry industries.</p>
+<p>Here, we will derive the two cost parameters that are essential for the FRS module to function from a dataset of construction costs of forest roads. We will do so by using a statistical model (linear regression) applied onto the data.</p>
+<p>To start, open the file <code>road_costs_data.csv</code> located in the <code>exercices-prepare-parameters</code> folder. Observe the structure of the data. We have the response variable <code>cost</code>, and two explanatory variables, <code>slope</code> and <code>road_type</code>. <code>cost</code> is simply the cost of construction of 100m of a road on slope with the grading described by <code>slope</code>, and of the road type described by <code>road_type</code>.</p>
+<p>From this dataset, we want to obtain two different parameters :</p>
+<ul>
+<li>The <strong>basal distance cost</strong> is the cost of construction of a road in the best possible conditions. It is, in essence, the irreducible cost of constructing a road on the distance of a cell. Therefore, the basal distance cost can correspond to the intercept of a linear regression that we will apply on the dataset.</li>
+<li>The <strong>additional cost due to the elevation</strong> (or “coarse elevation cost”) corresponds to the added cost of construction a forest road on a given slope, when compared to the basal distance cost. It can correspond the effet of the slope as a factor in a linear regression, when applied on a dataset similar to ours.</li>
+</ul>
+<blockquote>
+<p>💡 The term “Coarse elevation” in the name of the parameters refers to the slope; while the term “Fine elevation” refers to topographic obstacles such as cliffs or breaks. See the <a href="https://github.com/Klemet/LANDIS-II-Forest-Roads-Simulation-module/blob/master/LANDIS-II%20Forest%20Roads%20Simulation%20v1.1%20User%20Guide.pdf">the user guide</a> for more information.</p>
+</blockquote>
+<p>We will compute these costs only for a reference road type that we will choose. This is because the FRS module uses multiplicative values (relative to the reference road type) to determine the construction cost of different road types. You will learn more about these multiplicative cost values in a later section. Here, we will choose the lowest road type - <code>Tertiary</code>, for small forest roads with low traffic - as a reference. In effect, <strong>this means that we will apply a linear regression only for the lines of our data table that corresponds to the road type <code>Tertiary</code></strong>. This also mean that <strong>we will not indicate the effect of the factor <code>road_type</code> in our linear regression</strong>.</p>
+<p>To obtain these parameters, open the file <code>correction_script_to_get_parameters.R</code> with R studio. You can also open it with R if you prefer; but you might have to adapt one or two commands. <strong>Run the script line by line up to section 9 of the script</strong>, reading the commentaries present in the script as you go. if you are not familiar with R code, you can take the time to understand in detail what the different commands correspond to. <strong>Don’t close R studio when you are done</strong>. We will still need it later !</p>
+<p>When you are done, write the value of the basal distance cost and the additional costs due to the elevation into the <code>roads.txt</code> file. Remember that the additional elevation cost for a slope of 0 to 9% is going to be 0, as this is the level of reference. For slope degrees superior to 41%, input a punitive value in order to prevent the FRS module from building roads onto such a slope.</p>
+<p>In the end, the parameters should look like this in <code>roads.txt</code>:</p>
+<hr />
+<details>
+<summary>
+<strong>Click for Answer</strong>
+</summary>
+<p><br>
+<code>DistanceCost 894.1</code></p>
+<pre><code>CoarseElevationCosts
+&gt;&gt; Lower elevation      Upper elevation        Additional
+&gt;&gt;    threshold            threshold             value
+          0                    9                   0
+          9                    16                  127.9
+          16                   41                  511.5
+          41                   10000               10000000</code></pre>
+</details>
+<hr />
+</div>
+<div id="the-elevation-raster" class="section level3">
+<h3>7. The elevation raster</h3>
+<p>The elevation raster is pretty straight-forward to understand. It is a raster map where each pixel equals the mean elevation value for the terrain in the pixel. From this map, the FRS module will compute a mean slope value between one pixel and its neighbors.</p>
+<p>The elevation raster can be derived from a Digital Elevation Model. Here, we will use data from the <a href="https://open.canada.ca/data/en/dataset/7f245e4d-76c2-4caa-951a-45d1d2051333">Canadian Digital Elevation Model</a>. You can find the two raster tiles of the DEM that overlap with our study area in the <code>spatial-data</code> folder. They are named <code>cdem_dem_031P.tif</code> and <code>cdem_dem_032A.tif</code>.</p>
+<p>Then, follow these instructions in QGIS to create the elevation map for our simulations :</p>
+<ul>
+<li>Unzip, then add the two raster tiles that you download as layers in QGIS.</li>
+<li>[Optional] If you still have the initial road network opened as a layer in QGIS, look at its superposition with the elevation rasters that you added. <strong>Do you notice anything ?</strong></li>
+</ul>
+<hr />
+<details>
+<summary>
+<strong>Click for Answer</strong>
+</summary>
+<br>
+You can see that many of the roads in our landscape follow the elevation of the land. In particular, you can see that existing roads are often parallel to riverbeds.
+</details>
+<hr />
+<ul>
+<li>Go into the <code>Raster</code> tab, then <code>Miscellaneous</code>, and choose the tool <code>Merge</code>.</li>
+<li>In the <code>Input layers</code> field of the <code>Merge</code> tool, click the <code>...</code> button on the right and select the two elevation rasters.</li>
+<li>Click <code>Run</code>.</li>
+<li>Go into the <code>Raster</code> tab, then <code>Projections</code>, and choose the tool <code>Warp</code>.</li>
+<li>As <code>Input layer</code>, choose the <code>Merged</code> raster that you just created. In <code>Target CRS</code>, choose <code>EPSG:32198 - NAD83 / Quebec Lambert</code>. In <code>Output file resolution in target georeferenced units</code>, choose <code>100</code>. As <code>Output data type</code>, choose <code>Int32</code>.</li>
+<li>Click <code>Run</code>.</li>
+<li>Go into the <code>Raster</code> tab, then <code>Extraction</code>, and choose the tool <code>Clip raster by extent</code>.</li>
+<li>In <code>Input layer</code>, choose the raster you created with the <code>Warp</code> tool (normally named <code>Reprojected</code>). In <code>Clipping extent</code>, use the <code>...</code> button on the right; then select <code>Calculate from layer</code>, and then choose the initial communities layer (or a raster that we created previously).</li>
+<li>Click <code>Run</code>.</li>
+<li>Save the resulting raster in the <code>shared-rasters</code> folder, with the name <code>coarse_elevation.tif</code>.</li>
+</ul>
+<p>The resulting raster should look like this :</p>
+<hr />
+<details>
+<summary>
+<strong>Click for Answer</strong>
+</summary>
+<br>
+<img src="imgs/coarse_elevation_correction_visualisation.JPG" />
+</details>
+<hr />
+<p>Now that the raster is done, you should be able to write the path to the <code>coarse_elevation.tif</code> into the <code>roads.txt</code> file.</p>
+<p>The path should look like this in <code>roads.txt</code> :</p>
+<hr />
+<details>
+<summary>
+<strong>Click for Answer</strong>
+</summary>
+<br>
+<code>CoarseElevationRaster "../shared-rasters/coarse_elevation.tif"</code>
+</details>
+<hr />
+</div>
+<div id="the-coarse-water-raster" class="section level3">
+<h3>8. The coarse water raster</h3>
+<p>The coarse water raster is one of the optional rasters. Still, we will take it into account, as rivers and lakes are numerous in our landscape and will heavily influence the location of roads. The coarse water raster is really simple, as it contains either <code>0</code> for the absence of water, and numbers superior to <code>0</code> for the presence of water.</p>
+<blockquote>
+<p>💡 The term “Coarse water” in the name of the parameters refers to what is often called “surface hydrology” in GIS langage, meaning lakes and rivers represent by polygons in vectorial data. Meanwhile, the term “Fine water” refers to what is called “linear hydrology” in GIS data, meaning streams whos width is not known or very small, and who are represented in vectorial data by lines rather than by polygons. See the <a href="https://github.com/Klemet/LANDIS-II-Forest-Roads-Simulation-module/blob/master/LANDIS-II%20Forest%20Roads%20Simulation%20v1.1%20User%20Guide.pdf">the user guide</a> for more information.</p>
+</blockquote>
+<p>The coarse water raster can easily be derived from hydrological data. Here, we will use data from the 5th provincial forest inventory of Québec.</p>
+<p>To create the coarse water raster, follow these instructions in QGIS :</p>
+<ul>
+<li>Add the file <code>lakes_rivers.shp</code> in the folder spatial-data as a layer in QGIS.</li>
+<li>Go into the <code>Raster</code> tab, then <code>Conversion</code>, and choose the tool <code>Rasterize (Vector to raster)</code>.</li>
+<li>As <code>Input layer</code>, choose the <code>lakes_rivers</code> layer. Don’t choose a <code>Field to use for a burn-in value</code>. In <code>A fixed value to burn</code>, input <code>1</code>. In <code>Output raster size units</code>, choose <code>Georeferenced units</code>. In <code>Horizontal resolution</code> and <code>Vertical resolution</code>, input <code>100</code>. In <code>Output Extent</code>, click on the <code>...</code> button on the right, and choose <code>Calculate from layer</code>, then select the initial communities raster (or any raster that we have created before). In <code>Output data type</code>, choose <code>Int16</code>.</li>
+<li>Click <code>Run</code>.</li>
+<li><strong>Look at the resulting raster</strong>. Do you notice anything important ?</li>
+</ul>
+<hr />
+<details>
+<summary>
+<strong>Click for Answer</strong>
+</summary>
+<p><br>
+<img src="imgs/bad_water_rasterization.JPG" /></p>
+You can see that the rasterized rivers are often not continuous: there are “holes” in the path. These holes are important, as the pathfinding algorithm will use them to “cross” the rivers without taking into account the price of constructing a bridge.
+These “holes” are the result of the algorithm used by the Rasterize tool of QGIS. If a cell superpose just slightly with a polygon, then the polygon isn’t considered as rasterized in this cell. We will have to take care of that.
+</details>
+<hr />
+<ul>
+<li>Re-open the <code>Rasterize</code> tool, and fill it with the same instructions as before. However, <strong>in the <code>Additional command-line parameters</code> field, write <code>-at</code></strong>.</li>
+</ul>
+<blockquote>
+<p>💡 The <code>-at</code> additional parameter that we use here is a parameter for the GDAL engine that is used in the <code>Rasterize</code> tool, and means ALL_TOUCH. With this parameter, every cell touching a polygone of surface water is going to be considered as containing water.</p>
+</blockquote>
+<ul>
+<li>Click <code>Run</code>.</li>
+<li>Save the resulting raster in the <code>shared-rasters</code> folder, with the name <code>coarse_water.tif</code>.</li>
+</ul>
+<p>The resulting raster should look like this :</p>
+<hr />
+<details>
+<summary>
+<strong>Click for Answer</strong>
+</summary>
+<br>
+<img src="imgs/coarse_water_correction_visualisation.JPG" />
+</details>
+<hr />
+<p>Now that the raster is done, you should be able to write the path to the <code>coarse_water.tif</code> into the <code>roads.txt</code> file.</p>
+<p>The path should look like this in <code>roads.txt</code>:</p>
+<hr />
+<details>
+<summary>
+<strong>Click for Answer</strong>
+</summary>
+<br>
+<code>CoarseWaterRaster "../shared-rasters/coarse_hydrology.tif"</code>
+</details>
+<hr />
+</div>
+<div id="the-coarse-water-cost" class="section level3">
+<h3>9. The coarse water cost</h3>
+<p>The coarse water cost represent the cost of building a road across a cell containing body of water (larger than a stream). In essence, this cost is supposed to be the cost of building a bridge section on the distance of a cell.</p>
+<p>This cost can be estimated by looking at the cost of construction of existing bridges. However, asking for expert opinion can be a quicker option. It is also possible to input what is called a “punitive” value, meaning a value that is chosen arbitrarily to prevent the pathfinding algorithm to go through rivers and lakes as much as possible. Be warned that choosing a punitive value that is unrealistic will result in skewed estimations of construction costs during the simulation, as long as the module is forced to cross rivers at some point. It might also result in un-realistic long detours to avoid a small crossing.</p>
+<p>Here, we will use a number that has been given to us by experts at the Ministère des Forêts, de la Faune et des Parcs (MFFP) du Québec. This cost will be of <code>300000</code>.</p>
+</div>
+<div id="the-road-types" class="section level3">
+<h3>10. The road types</h3>
+<p>As we have said earlier, the user can define different road types in the landscape, with associated with different level of traffic of wood trucks, different lifespans (before being destroyed by wearing), and different costs of construction.</p>
+<p>Here, we will use the three road types present in the database of cost that we saw in exercice : <code>Primary</code>, <code>Secondary</code> and <code>Tertiary</code>. You can start inputting them in <code>roads.txt</code>.</p>
+<p>The section describing the road types in <code>roads.txt</code> should look like this:</p>
+<hr />
+<details>
+<summary>
+<strong>Click for Answer</strong>
+</summary>
+<p><br></p>
+<pre><code>RoadTypes
+&gt;&gt; Lower Wood Flux      Upper Wood Flux        Road type     Multiplicative       Maximum age         Road Type
+&gt;&gt;    threshold            threshold               ID          Cost Value      Before destruction      Name
+                                                   3                                                  Tertiary
+                                                   2                                                  Secondary
+                                                   1                                                  Primary</code></pre>
+</details>
+<hr />
+</div>
+<div id="the-flux-thresholds-for-each-road-type" class="section level3">
+<h3>11. The flux thresholds for each road type</h3>
+<p>The flux thresholds of each road type correspond to limits of wood trucks traffic on a forest road, for the length of a time step. Above these limits, a forest road will have to be upgraded to a higher-grade (larger) type to support the higher traffic. They are used when the wood fluxes are enabled in the simulation.</p>
+<p>To facilitate the input, these thresholds directly refer to the transport of quantities of wood, without taking into account the wood that can be transported by a single truck. Currently, the wood transported is expressed in units of age cohorts harvested in a cell. This is so that the FRS module can be used with any harvest extension (Base Harvest or Biomass Harvest).</p>
+<p>These parameters can be estimated in different ways. Empirically, they can be chosen so that, on average and for a “business as usual” scenario, the proportion of the different types of road in the simulated landscape remains the same as the proportion of the initial, existing road network. They can also be decided arbitrarily.</p>
+<p>We will use use flux thresholds that we determined empirically, and that are of <code>0</code>-<code>70</code> for <code>Tertiary</code> roads; <code>70</code>-<code>40000</code> for <code>Secondary</code> roads; and <code>40000</code>-<code>100000</code> for <code>Primary</code> roads. You can input these in <code>roads.txt</code>.</p>
+<p>The section describing the road types in <code>roads.txt</code> should look like this:</p>
+<hr />
+<details>
+<summary>
+<strong>Click for Answer</strong>
+</summary>
+<p><br></p>
+<pre><code>RoadTypes
+&gt;&gt; Lower Wood Flux      Upper Wood Flux        Road type     Multiplicative       Maximum age         Road Type
+&gt;&gt;    threshold            threshold               ID          Cost Value      Before destruction      Name
+        0                       70                   3                                                  Tertiary
+        70                      40000                2                                                  Secondary
+        40000                   100000               1                                                  Primary</code></pre>
+</details>
+<hr />
+</div>
+<div id="the-multiplicative-cost-values-for-each-road-type" class="section level3">
+<h3>12. The multiplicative cost values for each road type</h3>
+<p>The multiplicative cost values serves to compute the cost of a given road type, related to a road type of reference. In our case, our road type of reference is the smallest, cheapest type: <code>Tertiary</code>. Since it is the road type of reference, its multiplicative cost value will be of <code>1</code>. This is because the cost that is calculated by the pathfinding algorithm (using the cost parameters we calculated before) is the cost of construction for the reference road type. Therefore, the multiplicative cost value of <code>1</code> assures that the cost of construction for a <code>Tertiary</code> road will be the same as the one computed by the pathfinding algorithm.</p>
+<p>Meanwhile, as the <code>Secondary</code> and <code>Primary</code> road types are larger and more expensive to construct than <code>Tertiary</code> roads, their multiplicative values will be superior to <code>1</code>. On the contrary, if we had a road type smaller than the reference type, its multiplicative cost value would be inferior to <code>1</code>.</p>
+<p>When a road will need to be updated from a the <code>Tertiary</code> type to another, the cost of upgrade will correspond to the cost of construction of the higher road type, minus the one for the cheaper road type. Multiplicative cost values are used to facilitate the parametrization for the user, and avoid multiple interactions parameters between the types of roads and the other cost parameters (e.g. having a different <code>Basal distance cost</code> parameter by road type).</p>
+<p>To compute the multiplicative cost values of each road type, we will again use the dataset of construction costs that we used in section 6. We will simply compare the average construction cost (all slope categories included) of <code>Tertiary</code> roads (the reference type) with the one of <code>Secondary</code> and <code>Primary</code> roads. For example, the multiplicative cost value of <code>Secondary</code> roads will be their average construction cost, divided by the average construction cost of <code>Tertiary</code> roads.</p>
+<p>To compute those costs, simply execute in R or R studio the sections 10 and 11 of the R script <code>correction_script_to_get_parameters.R</code>.</p>
+<p>In the end, the parameters should look like this in <code>roads.txt</code>:</p>
+<hr />
+<details>
+<summary>
+<strong>Click for Answer</strong>
+</summary>
+<p><br></p>
+<pre><code>RoadTypes
+&gt;&gt; Lower Wood Flux      Upper Wood Flux        Road type     Multiplicative       Maximum age         Road Type
+&gt;&gt;    threshold            threshold               ID          Cost Value      Before destruction      Name
+      0                       70                   3              1                                   Tertiary
+      70                      40000                2              2.38                                Secondary
+      40000                   100000               1              14.12                               Primary</code></pre>
+</details>
+<hr />
+</div>
+<div id="the-maximum-age-for-each-road-type" class="section level3">
+<h3>13. The maximum age for each road type</h3>
+<p>The maximum age of the road types indicates how long a road will last before being destroyed by wear (erosion, passage of vehicles, etc.). It can be obtained via experts opinion, but can also be found in documents from forestry industries or governmental reports.</p>
+<p>In our case, we will use ages specified in the classification of roads by the MFFP of Quebec. Theses maximum ages before destruction for <code>Tertiary</code>, <code>Secondary</code> and <code>Primary</code> road types will thus be <code>1</code>, <code>15</code> and <code>25</code> respectively.</p>
+<p>You can input those parameters in <code>roads.txt</code>, which will end the exercice. The parameters related to the road types should look like this:</p>
+<hr />
+<details>
+<summary>
+<strong>Click for Answer</strong>
+</summary>
+<p><br></p>
+<pre><code>RoadTypes
+&gt;&gt; Lower Wood Flux      Upper Wood Flux        Road type     Multiplicative       Maximum age         Road Type
+&gt;&gt;    threshold            threshold               ID          Cost Value      Before destruction      Name
+      0                       70                   3              1                  1                Tertiary
+      70                      40000                2              2.38               15               Secondary
+      40000                   100000               1              14.12              25               Primary</code></pre>
+</details>
+<hr />
+</div>
+<div id="correction" class="section level3">
+<h3>Correction</h3>
+<p>Now that the exercice is over, you can check if you’ve filled the <code>roads.txt</code> filled correctly by comparing your version with the file <code>roads_correction.txt</code> present in the same folder.</p>
+<p>Here is the content of <code>roads_correction.txt</code>:</p>
+<hr />
+<details>
+<summary>
+<strong>Click for Answer</strong>
+</summary>
+<p><br></p>
+<pre><code>&gt;&gt; To be read properly, the parameter file must contain the parameters in this order.
+
+&gt;&gt;------------------------------------------------------------------------
+&gt;&gt; BASIC PARAMETERS
+
+LandisData &quot;Forest Roads Simulation&quot;
+
+Timestep 10
+
+HeuristicForNetworkConstruction Closestfirst
+
+SkiddingDistance 200
+
+LoopingBehavior No
+
+OutputsOfRoadNetworkMaps ./output/disturbances/roads/roadNetwork.tif
+OutputsOfRoadLog ./output/disturbances/roads/
+
+&gt;&gt;------------------------------------------------------------------------
+&gt;&gt; INPUT RASTERS AND COST PARAMETERS
+&gt;&gt; Only the initial road network raster and the distance cost are
+&gt;&gt; essential. If you do not want to use one of the cost for the path-
+&gt;&gt; -finding, just indicate “none” as the parameter value for the raster
+&gt;&gt; location, and “0” for the value of the associated cost.
+
+RasterOfBuildableZones &quot;../shared-rasters/buildable_zones.tif&quot;
+InitialRoadNetworkMap &quot;../shared-rasters/initial_road_network.tif&quot;
+DistanceCost 894.1
+
+CoarseElevationRaster &quot;../shared-rasters/coarse_elevation.tif&quot;
+
+CoarseElevationCosts
+&gt;&gt; Lower elevation      Upper elevation        Additional
+&gt;&gt;    threshold            threshold             value
+     0            9            0
+     9            16           127.9
+     16           41           511.5
+     41           10000        10000000
+
+FineElevationRaster None
+
+CoarseWaterRaster &quot;../shared-rasters/coarse_hydrology.tif&quot;
+CoarseWaterCost 1400000
+
+FineWaterRaster None
+
+SoilsRaster None
+&gt;&gt;------------------------------------------------------------------------
+&gt;&gt; ROAD TYPE THRESHOLDS AND MULTIPLICATION VALUES
+&gt;&gt; These parameters are all essential to the functioning of the
+&gt;&gt; extension.
+SimulationOfRoadAging Yes
+SimulationOfWoodFlux  Yes
+
+RoadTypes
+&gt;&gt; Lower Wood Flux      Upper Wood Flux        Road type     Multiplicative       Maximum age         Road Type
+&gt;&gt;    threshold            threshold               ID          Cost Value      Before destruction      Name
+      0                       70                   3              1                  1                Tertiary
+      70                      40000                2              2.38               15               Secondary
+      40000                   100000               1              14.12              25               Primary
+
+RoadTypesForExitingWood
+&gt;&gt; Road type   Road Type
+&gt;&gt;    ID        Name
+      8         Sawmill
+      9         MainRoadNetworkPaved</code></pre>
+</details>
+<hr />
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-hardyLANDISIIExtensionDynamically2021" class="csl-entry">
+Hardy, Clément, Christian Messier, Elise Filotas, and Osvaldo Valeria. 2021. <span>“A <span>LANDIS</span>-<span>II</span> Extension to Dynamically Simulate a Network of Forest Roads.”</span> <em>Environmental Modelling and Software</em>.
+</div>
+<div id="ref-roaceaEffetsCoupesPartielles2011" class="csl-entry">
+Roa Cea, Ingrid Béatriz. 2011. <span>“<span class="nocase">Effets des coupes partielles et à rétention variable sur la distance de débardage et les coûts de récolte, étude de cas</span>,”</span> 117.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="01-presentation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="03-results-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["frs-module-workshop.pdf", "frs-module-workshop.epub"],
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Presentation | The FRS Module Training Workshop</title>
+  <meta name="description" content="This webpage contains the content of a training workshop for the Forest Roads Simulation (FRS) module developed for the LANDIS-II model." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Presentation | The FRS Module Training Workshop" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://github.com/Klemet/Workshop-FRS-Module" />
+  <meta property="og:image" content="https://github.com/Klemet/Workshop-FRS-Module/./imgs/Logo Module FRS.png" />
+  <meta property="og:description" content="This webpage contains the content of a training workshop for the Forest Roads Simulation (FRS) module developed for the LANDIS-II model." />
+  <meta name="github-repo" content="Klemet/Workshop-FRS-Module" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Presentation | The FRS Module Training Workshop" />
+  
+  <meta name="twitter:description" content="This webpage contains the content of a training workshop for the Forest Roads Simulation (FRS) module developed for the LANDIS-II model." />
+  <meta name="twitter:image" content="https://github.com/Klemet/Workshop-FRS-Module/./imgs/Logo Module FRS.png" />
+
+<meta name="author" content="Clément Hardy" />
+
+
+<meta name="date" content="2021-06-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="02-parametrisation.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">FRS module workshop</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#objectives"><i class="fa fa-check"></i>Objectives</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#plan"><i class="fa fa-check"></i>Plan</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prerequisites"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#presenter"><i class="fa fa-check"></i>Presenter</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html"><i class="fa fa-check"></i>Presentation</a>
+<ul>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html#why-are-forest-roads-so-important"><i class="fa fa-check"></i>Why are forest roads so important ?</a></li>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html#the-frs-module"><i class="fa fa-check"></i>The FRS module</a>
+<ul>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html#goals-of-the-frs-module"><i class="fa fa-check"></i>Goals of the FRS module</a></li>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html#structure-of-the-frs-module"><i class="fa fa-check"></i>Structure of the FRS module</a></li>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html#solving-the-mtap"><i class="fa fa-check"></i>Solving the MTAP</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html#the-functioning-of-the-frs-module"><i class="fa fa-check"></i>The functioning of the FRS module</a>
+<ul>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html#initialisation-phase"><i class="fa fa-check"></i>Initialisation phase</a></li>
+<li class="chapter" data-level="" data-path="01-presentation.html"><a href="01-presentation.html#during-the-simulation"><i class="fa fa-check"></i>During the simulation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html"><i class="fa fa-check"></i>Parameterization</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#ressources-needed"><i class="fa fa-check"></i>Ressources needed</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#looking-at-the-frs-module-parameter-file"><i class="fa fa-check"></i>Looking at the FRS module parameter file</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#exercice-filling-the-rest-of-the-parameter-file"><i class="fa fa-check"></i>Exercice : filling the rest of the parameter file</a>
+<ul>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-time-step"><i class="fa fa-check"></i>1. The time step</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-heuristic"><i class="fa fa-check"></i>2. The heuristic</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-skidding-distance"><i class="fa fa-check"></i>3. The skidding distance</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-raster-of-buildable-areas"><i class="fa fa-check"></i>4. The raster of buildable areas</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-initial-road-network-map"><i class="fa fa-check"></i>5. The initial road network map</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-basal-distance-cost-and-the-coarse-elevation-cost"><i class="fa fa-check"></i>6. The basal distance cost, and the coarse elevation cost</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-elevation-raster"><i class="fa fa-check"></i>7. The elevation raster</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-coarse-water-raster"><i class="fa fa-check"></i>8. The coarse water raster</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-coarse-water-cost"><i class="fa fa-check"></i>9. The coarse water cost</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-road-types"><i class="fa fa-check"></i>10. The road types</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-flux-thresholds-for-each-road-type"><i class="fa fa-check"></i>11. The flux thresholds for each road type</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-multiplicative-cost-values-for-each-road-type"><i class="fa fa-check"></i>12. The multiplicative cost values for each road type</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#the-maximum-age-for-each-road-type"><i class="fa fa-check"></i>13. The maximum age for each road type</a></li>
+<li class="chapter" data-level="" data-path="02-parametrisation.html"><a href="02-parametrisation.html#correction"><i class="fa fa-check"></i>Correction</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html"><i class="fa fa-check"></i>Analyzing simulation results</a>
+<ul>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#ressources-needed-1"><i class="fa fa-check"></i>Ressources needed</a></li>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#understanding-the-two-scenarios"><i class="fa fa-check"></i>Understanding the two scenarios</a></li>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#looking-at-the-cost-map-generated-by-the-frs-module"><i class="fa fa-check"></i>Looking at the cost map generated by the FRS module</a>
+<ul>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#with-only-the-basal-distance-cost"><i class="fa fa-check"></i>With only the basal distance cost</a></li>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#with-elevation-costs-included"><i class="fa fa-check"></i>With elevation costs included</a></li>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#with-elevation-and-water-bodies-included"><i class="fa fa-check"></i>With elevation and water bodies included</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#launching-the-simulations"><i class="fa fa-check"></i>Launching the simulations</a></li>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#looking-at-the-outputs-with-qgis"><i class="fa fa-check"></i>Looking at the outputs with QGIS</a></li>
+<li class="chapter" data-level="" data-path="03-results-analysis.html"><a href="03-results-analysis.html#analyzing-the-results-with-r"><i class="fa fa-check"></i>Analyzing the results with R</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="04-ending.html"><a href="04-ending.html"><i class="fa fa-check"></i>Final word</a></li>
+<li class="chapter" data-level="" data-path="05-references.html"><a href="05-references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The FRS Module Training Workshop</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="presentation" class="section level1">
+<h1>Presentation</h1>
+<div id="why-are-forest-roads-so-important" class="section level2">
+<h2>Why are forest roads so important ?</h2>
+<p>Forest roads are a particular type of roads <span class="citation">(<a href="#ref-gucinskiForestRoadsSynthesis2001" role="doc-biblioref">Gucinski 2001</a>)</span>. They are often defined in an implicit manner in articles that talk about them. Here, <strong>we will define forest roads road as roads that have been constructed to access forest ressources</strong>, even if they can be maintained for several purposes <span class="citation">(<a href="#ref-huntManagingForestRoad2009" role="doc-biblioref">Hunt, Lemelin, and Saunders 2009</a>; <a href="#ref-laschiMethodologicalApproachExploiting2016" role="doc-biblioref">Laschi et al. 2016</a>; <a href="#ref-thompsonForestRoadsOperational2021" role="doc-biblioref">Thompson, Gannon, and Caggiano 2021</a>; <a href="#ref-zhangApproachImprovingFirefighting2020" role="doc-biblioref">Zhang et al. 2020</a>)</span>. These roads <strong>traverse forest ecosystems, and they often present a surface layer of gravel or of local soil</strong>, even if they can sometimes be paved.</p>
+<p>Forest roads are not always taken into account when talking about the effects and impacts of forest management. However, they can have important effects on forest ecosystems <span class="citation">(<a href="#ref-bostonPotentialEffectsForest2016" role="doc-biblioref">Boston 2016</a>)</span>. Indeed, they have been shown to :</p>
+<ul>
+<li>Reduce the surrounding macroinvertebrate soil faune <span class="citation">(<a href="#ref-haskellEffectsForestRoads2000" role="doc-biblioref">Haskell 2000</a>)</span></li>
+<li>Reduce the abundance of some beetles <span class="citation">(<a href="#ref-koivulaEffectsForestRoads2005" role="doc-biblioref">Koivula 2005</a>)</span></li>
+<li>Alter the quality of habitat for several species of birds <span class="citation">(<a href="#ref-ortegaEffectsForestRoads1999" role="doc-biblioref">Ortega and Capen 1999</a>)</span></li>
+<li>Fragment the forest landscape more than clearcuts do <span class="citation">(<a href="#ref-reedContributionRoadsForest1996" role="doc-biblioref">Reed, Johnson-Barnard, and Baker 1996</a>)</span></li>
+<li>Repeal forest species such as the elk <span class="citation">(<a href="#ref-witmerEffectForestRoads1985" role="doc-biblioref">Witmer and deCalesta 1985</a>)</span></li>
+<li>Increase the predation of caribou by wolves <span class="citation">(<a href="#ref-jamesDistributionCaribouWolves2000" role="doc-biblioref">James and Stuart-Smith 2000</a>; <a href="#ref-whittingtonCaribouEncountersWolves2011" role="doc-biblioref">Whittington et al. 2011</a>)</span></li>
+<li>Shape the spatial boundaries of forest fires <span class="citation">(<a href="#ref-narayanarajInfluencesForestRoads2011" role="doc-biblioref">Narayanaraj and Wimberly 2011</a>; <a href="#ref-yocomPreviousFiresRoads2019" role="doc-biblioref">Yocom et al. 2019</a>)</span></li>
+<li>Create social issues between different types of “users” of the forest : aboriginal communities, recreationists, hunters, and so on <span class="citation">(<a href="#ref-adam2012forestry" role="doc-biblioref">Adam, Kneeshaw, and Beckley 2012</a>; <a href="#ref-bourgeoisRoutesForestieresAu2005" role="doc-biblioref">Bourgeois, Kneeshaw, and Boisseau 2005</a>; <a href="#ref-huntManagingForestRoad2009" role="doc-biblioref">Hunt, Lemelin, and Saunders 2009</a>; <a href="#ref-kneeshawAccessibiliteForestiereAccrue2006" role="doc-biblioref">Kneeshaw and Gauthier 2006</a>)</span>.</li>
+</ul>
+<p>They also represent an important operational cost for forestry industries, varying between 5% to almost 18% of the total operational costs <span class="citation">(<a href="#ref-groupeddmEnqueteCoutsOperation2020" role="doc-biblioref">Groupe DDM and MFFP du Québec 2020</a>; <a href="#ref-toscani2020forest" role="doc-biblioref">Toscani, Sekot, and Holzleitner 2020</a>)</span>.</p>
+<p>As you can see, forest roads can have many different impacts, and are important to take into account when studying forest ecosystems at the landscape scale. <strong>That is why their simulation with changing forest management strategies and legislation can be crucial to better conserve forest ecosystems</strong>.</p>
+<hr />
+<p>❓ <strong>Examples of research questions in ecology related to the simulation of forest roads : </strong></p>
+<ul>
+<li>How do different forest management strategies fragment the landscape, when forest roads are taken into account ?</li>
+<li>What will be the impact of forest roads on endangered species, as they increase the movement of potential predators ?</li>
+<li>How will forest roads constructed in a newly harvested area affect hunting pressure</li>
+</ul>
+<hr />
+</div>
+<div id="the-frs-module" class="section level2">
+<h2>The FRS module</h2>
+<p>The Forest Road Simulation (FRS) module is an extension for LANDIS-II, whose goal is to <strong>dynamically simulate a forest road network according to the harvested areas in the landscape</strong>.</p>
+<p>Here is an animation showing the evolution of road networks simulated with the FRS module in Quebec :</p>
+<p><img src="imgs/animation150Years.gif" /></p>
+<div id="goals-of-the-frs-module" class="section level3">
+<h3>Goals of the FRS module</h3>
+<p>The FRS module was designed with 4 considerations in mind :</p>
+<ol style="list-style-type: decimal">
+<li>It should be easy to understand and use</li>
+<li>It should be able to reproduce the main characteristics of a real forest road network at the landscape scale</li>
+<li>It should not rely on low-level features of forest roads network that have limited influence at the landscape scale</li>
+<li>It should have a performance comparable to those of other LANDIS-II extensions</li>
+</ol>
+<p>We will now see how those considerations are tackled by the FRS module. However, if you want to know all of the details concerning the functioning and the performance of the module, you should read the article presenting the module <span class="citation">(<a href="#ref-hardyLANDISIIExtensionDynamically2021" role="doc-biblioref">Hardy et al. 2021</a>)</span>, as well as <a href="https://github.com/Klemet/LANDIS-II-Forest-Roads-Simulation-module/blob/master/LANDIS-II%20Forest%20Roads%20Simulation%20v1.1%20User%20Guide.pdf">the user guide</a>.</p>
+</div>
+<div id="structure-of-the-frs-module" class="section level3">
+<h3>Structure of the FRS module</h3>
+<p>The FRS module interacts with the simulation made by LANDIS-II in a particular way. Indeed, in its current version, its functioning is influenced by the presence of areas harvested by a harvest extension. However, it does not influence the position of the harvested area, and it currently does not influence the forest landscape either.</p>
+<p>As such, the FRS module edits its own particular spatial dataset in parallel to the vegetation map simulated by LANDIS-II. We call this dataset, which is a raster map with the same exact format as the other spatial data in LANDIS-II, the “road landscape.”</p>
+<p>Hence, the FRS module creates roads on raster cells, using pathfinding algorithms. The roads that it creates are not vectorial, as this would require a lot more computations and parameters for a questionable gains in terms its ability to replicate reality.</p>
+</div>
+<div id="solving-the-mtap" class="section level3">
+<h3>Solving the MTAP</h3>
+<p>To properly understand how the FRS module functions, one has to understand the Multiple Target Access Problem (MTAP). The MTAP is simply the problem of trying to reach multiple targets (nodes) in a graph via roads that link them (vertices) in an optimal way (least-cost, least-distance, best speed, etc.). As the number of targets increase, the number of possible configurations for the resulting road network becomes very great. How, then, can we find the optimal configuration according to a set of priorities ? Which roads (or vertices) should be built, and which ones should not ?</p>
+<center>
+<img src="imgs/MTAP.JPG" />
+</center>
+<p>With the advances in computer technology, the MTAP was formulated and described in the context of forest operations <span class="citation">(<a href="#ref-heinimannForestRoadNetwork2017" role="doc-biblioref">Heinimann 2017</a>)</span>. However, despite the capacity of computer to execute an enormous number of calculations, the MTAP can still be considered unsolvable in reasonable time frames as soon as a certain number of targets is reached, because of the near-infinite number of possible configurations for the network. This is especially true if the “cost” associated with the vertices (as a cost of construction) must be calculated at the same time.</p>
+<p>Meanwhile, there exist another type of problem that computers are able to solve in a very, very short time : the Single Target Access Problem (STAP). In a STAP, as only one target exist, the only calculation that should be made is to determine the best path, road or vertex to the target.</p>
+<center>
+<img src="imgs/STAP.JPG" />
+</center>
+<p>The STAP can be easily solved with the use of a pathfinding algorithm, such as the famous Dijkstra algorithm <span class="citation">(<a href="#ref-dijkstraNoteTwoProblems1959" role="doc-biblioref">Dijkstra 1959</a>)</span>. Therefore, one possible way to solve a MTAP is to use a <a href="https://en.wikipedia.org/wiki/Heuristic">heuristic</a> to transform in MTAP into an ordered set of STAPs that will be solved one after the other by a pathfinding algorithm. This approach is used in professional software, such as Remsoft’s Road Optimizer <span class="citation">(<a href="#ref-remsoftRemsoftRoadOptimizer2019" role="doc-biblioref">Remsoft 2019</a>)</span>, and has been used in previous research on the problem of forest road network design <span class="citation">(<a href="#ref-andersonDeterminingOptimalRoad2006" role="doc-biblioref">Anderson, Nelson, and D’Eon 2006</a>; <a href="#ref-heinimannForestRoadNetwork2017" role="doc-biblioref">Heinimann 2017</a>)</span>.</p>
+<center>
+<img src="imgs/MTAP_STAPs.JPG" />
+</center>
+<p>Different heuristics can be used, in order to determine the set of STAP to solve <span class="citation">(<a href="#ref-shirasawaComparativeStudyHeuristic2014" role="doc-biblioref">Shirasawa and Hasegawa 2014</a>)</span>. Such heuristics can be “make roads toward target nearest to a road first,” or “make roads to and between targets in a random order.”</p>
+<p>Note that in the MTAP, the targets are already determined. This makes the MTAP different from what is called an “integrated forest harvest-scheduling,” which corresponds to finding the optimal location of areas to harvest, alongside an optimal configuration for the resulting forest road network <span class="citation">(<a href="#ref-heinimannForestRoadNetwork2017" role="doc-biblioref">Heinimann 2017</a>)</span>. The FRS module doesn’t go that far, and lets the harvest extensions of LANDIS-II decide where the harvested areas will be located.</p>
+<p>Therefore, the FRS module solves an MTAP using a heuristics, and lets the user choose amongst three : “Closest first” (build roads to area closest to existing roads first); “Farthest first” (the opposite of “Closest first”); and “Random” (build roads to harvested areas in a random order). To determine the path of the roads in space, the FRS module uses the Dijkstra algorithm, along with a cost map.</p>
+</div>
+</div>
+<div id="the-functioning-of-the-frs-module" class="section level2">
+<h2>The functioning of the FRS module</h2>
+<p>Now that we have seen the theory behind the design of the FRS module, we will quickly talk about its functioning. Again, readers interested in more details than what is given here can take a look at the article presenting the module <span class="citation">(<a href="#ref-hardyLANDISIIExtensionDynamically2021" role="doc-biblioref">Hardy et al. 2021</a>)</span>, as well as <a href="https://github.com/Klemet/LANDIS-II-Forest-Roads-Simulation-module/blob/master/LANDIS-II%20Forest%20Roads%20Simulation%20v1.1%20User%20Guide.pdf">the user guide</a>.</p>
+<div id="initialisation-phase" class="section level3">
+<h3>Initialisation phase</h3>
+<p>LANDIS-II simulations always start with an initialisation phase, during which the different rasters needed by the model are read, the parameters read, and the different extensions prepared for the rest of the simulation.</p>
+<p>The FRS module uses the initialisation phase to create what is called the “cost map.” <strong>The cost map is a raster map in which each pixel represent the estimated cost of construction to construct a road in order to cross the pixel, whatever the direction of the crossing</strong>.</p>
+<p>Here is an example of a cost map generated by the FRS module :</p>
+<center>
+<img src="imgs/cost_raster.png" />
+</center>
+<p>On this cost map, you can see water bodies very clearly, as they require constructing bridges that can be very costly to construct, or even prohibited depending on the legislation in place. The path of streams are visible, as they require one or multiple culverts to be posed to traverse them. Then, you can see that the costs of constructions change according to the slope.</p>
+<p>To create such a map, the FRS module uses maps of landscape features and several cost parameters associated to them. Only one landscape feature - and its associated parameters - is necessary; the others are optional, in order to adapt to what data the user has at hand. However, the more features are taken into account, the more the roads created by the module will be realistic.</p>
+<p>Currently, the FRS module can take into account :</p>
+<ul>
+<li>The slope</li>
+<li>The presence of topographic obstacles requiring a detour (cliffs, breaks, etc.)</li>
+<li>The presence of bodies of water (lakes, rivers)</li>
+<li>The presence of streams</li>
+<li>The types of soil</li>
+</ul>
+<p>Once that the cost map has been created, the FRS module ends up the initialisation phase by “completing” the initial road network map that has been given by the user. Indeed, this map should contain existing roads and forest roads, alongside what we called “<strong>exit points</strong>.” This category is considered by the module as places where the wood harvested in the landscape can “exit” the landscape (to be sold or used). Every initial road landscape must have at least one site of this category, as <strong>the FRS module has for objective to connect harvested areas to exit points, or to roads that are connected to exit points themselves</strong>. Currently, exit points are static throughout the simulation: they are not created or deleted through time.</p>
+<p>If some roads in the initial road landscape are not connected to any exit points, the FRS module will “complete” the network by adding new road segments so that they are connected. This is done in order to correct possible missing roads in road databases.</p>
+</div>
+<div id="during-the-simulation" class="section level3">
+<h3>During the simulation</h3>
+<p>Once that the initialisation phase of LANDIS-II is other, the simulation starts. Each extension of LANDIS-II are called, according to their time step.</p>
+<p>The FRS module should be parameterized to always be called after the harvest extension has been activated. Once that it activates, the FRS module functions this way :</p>
+<ol style="list-style-type: decimal">
+<li>If road aging has been activated, the FRS module will age the roads of the landscape. If the roads become older than their maximum age of use, they are considered destroyed. Every road starts at an age 0 when constructed, and this age is only reset when a road is updated (see below). If a road is destroyed and then rebuilt in the same timestep, it is considered as repaired.</li>
+<li>The cells recently harvested by the harvest extension are ordered according to the heuristic chosen by the user. Hence, each cell represents a target to reach in the MTAP.</li>
+<li>Roads are constructed to the recently harvested cell, by considering them in their order. However, a road is only built if the given harvested cell is not already at a skidding distance from an existing road. In that case, the wood is considered as skidded to the nearby road pixel. Roads that are built must lead to the recently harvested cell of interest, but can start from any existing road pixel, as long as this road pixel is connected one way or another to an exit point.</li>
+<li>If the loop algorithm is activated, the FRS module will attempt to create a loop in the road network. It does this by creating a second road to the recently harvested cell. This can be important for certain fragmentation indices that are sensitive to the existence of “patches” that are completely surrounded by roads or by non-forest habitat.</li>
+<li>If the harvest extension is parameterized to use repeated harvested (e.g. shelterwood harvest or periodic uneven-aged cuts), then the FRS module will adapt to the need to return to the harvested cell in the futur. In particular, the module will chose the cheapest option between creating a low-grade road that might need to be re-built or repaired for the next passage; or a higher-grade road, more costly, that will still be in place next time.</li>
+<li>Finally, if the computation of wood fluxes is activated, the FRS module will simulate the transport of wood from the harvested area to the exit points of the landscape. This flux will influence the way that forest roads are upgraded to larger, higher-grade roads to adapt to the flux of trucks.</li>
+</ol>
+<p>Once that all of this is done, the FRS module creates raster maps corresponding to snapshots of the road landscape at the end of the time step, and then stops until the next time step when it will be activated.</p>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-adam2012forestry" class="csl-entry">
+Adam, Marie-Christine, Daniel Kneeshaw, and Tom M Beckley. 2012. <span>“Forestry and Road Development: <span>Direct</span> and Indirect Impacts from an Aboriginal Perspective.”</span> <em>Ecology and Society</em> 17 (4).
+</div>
+<div id="ref-andersonDeterminingOptimalRoad2006" class="csl-entry">
+Anderson, Axel E, John D Nelson, and Robert G D’Eon. 2006. <span>“Determining Optimal Road Class and Road Deactivation Strategies Using Dynamic Programming.”</span> <em>Canadian Journal of Forest Research</em> 36 (6): 1509–18. <a href="https://doi.org/10.1139/x06-051">https://doi.org/10.1139/x06-051</a>.
+</div>
+<div id="ref-bostonPotentialEffectsForest2016" class="csl-entry">
+Boston, Kevin. 2016. <span>“The <span>Potential Effects</span> of <span>Forest Roads</span> on the <span>Environment</span> and <span>Mitigating</span> Their <span>Impacts</span>.”</span> <em>Current Forestry Reports</em> 2 (4): 215–22. <a href="https://doi.org/10.1007/s40725-016-0044-x">https://doi.org/10.1007/s40725-016-0044-x</a>.
+</div>
+<div id="ref-bourgeoisRoutesForestieresAu2005" class="csl-entry">
+Bourgeois, Laurence, Daniel Kneeshaw, and Gaétane Boisseau. 2005. <span>“<span class="nocase">Les routes forestières au Québec : Les impacts environnementaux, sociaux et économiques</span>.”</span> <em>VertigO - La Revue Électronique En Sciences de l’environnement</em>, no. Volume 6 Numéro 2 (September). <a href="https://doi.org/10.4000/vertigo.4352">https://doi.org/10.4000/vertigo.4352</a>.
+</div>
+<div id="ref-dijkstraNoteTwoProblems1959" class="csl-entry">
+Dijkstra, E. W. 1959. <span>“A Note on Two Problems in Connexion with Graphs.”</span> <em>Numerische Mathematik</em> 1 (1): 269–71. <a href="https://doi.org/10.1007/BF01386390">https://doi.org/10.1007/BF01386390</a>.
+</div>
+<div id="ref-groupeddmEnqueteCoutsOperation2020" class="csl-entry">
+Groupe DDM, and MFFP du Québec. 2020. <span>“Enquête Sur Les Couts d’opération Forestière Dans Les Forêts Du Domaine de l’<span>État</span> Ainsi Que Sur Les Couts Et Revenus de l’industrie Du Sciage Du <span>Québec</span> 2019.”</span>
+</div>
+<div id="ref-gucinskiForestRoadsSynthesis2001" class="csl-entry">
+Gucinski, Hermann. 2001. <em>Forest <span>Roads</span>: <span>A Synthesis</span> of <span>Scientific Information</span></em>. <span>DIANE Publishing</span>.
+</div>
+<div id="ref-hardyLANDISIIExtensionDynamically2021" class="csl-entry">
+Hardy, Clément, Christian Messier, Elise Filotas, and Osvaldo Valeria. 2021. <span>“A <span>LANDIS</span>-<span>II</span> Extension to Dynamically Simulate a Network of Forest Roads.”</span> <em>Environmental Modelling and Software</em>.
+</div>
+<div id="ref-haskellEffectsForestRoads2000" class="csl-entry">
+Haskell, David G. 2000. <span>“Effects of <span>Forest Roads</span> on <span>Macroinvertebrate Soil Fauna</span> of the <span>Southern Appalachian Mountains</span>.”</span> <em>Conservation Biology</em> 14 (1): 57–63. <a href="https://doi.org/10.1046/j.1523-1739.2000.99232.x">https://doi.org/10.1046/j.1523-1739.2000.99232.x</a>.
+</div>
+<div id="ref-heinimannForestRoadNetwork2017" class="csl-entry">
+Heinimann, Hans Rudolf. 2017. <span>“Forest <span>Road Network</span> and <span>Transportation Engineering</span>  <span>State</span> and <span>Perspectives</span>.”</span> <em>Croat. J. For. Eng.</em>, 19.
+</div>
+<div id="ref-huntManagingForestRoad2009" class="csl-entry">
+Hunt, Len M., R. Harvey Lemelin, and Karen C. Saunders. 2009. <span>“Managing <span>Forest Road Access</span> on <span>Public Lands</span>: <span>A Conceptual Model</span> of <span>Conflict</span>.”</span> <em>Society &amp; Natural Resources</em> 22 (2): 128–42. <a href="https://doi.org/10.1080/08941920801922604">https://doi.org/10.1080/08941920801922604</a>.
+</div>
+<div id="ref-jamesDistributionCaribouWolves2000" class="csl-entry">
+James, Adam R. C., and A. Kari Stuart-Smith. 2000. <span>“Distribution of <span>Caribou</span> and <span>Wolves</span> in <span>Relation</span> to <span>Linear Corridors</span>.”</span> <em>The Journal of Wildlife Management</em> 64 (1): 154–59. <a href="https://doi.org/10.2307/3802985">https://doi.org/10.2307/3802985</a>.
+</div>
+<div id="ref-kneeshawAccessibiliteForestiereAccrue2006" class="csl-entry">
+Kneeshaw, Daniel, and Sylvie Gauthier. 2006. <span>“<span class="nocase">Accessibilité forestière accrue : panacée ou boîte de Pandore ?</span>”</span> <em>Téoros. Revue de Recherche En Tourisme</em> 25 (25-3): 36–40.
+</div>
+<div id="ref-koivulaEffectsForestRoads2005" class="csl-entry">
+Koivula, Matti J. 2005. <span>“Effects of <span>Forest Roads</span> on <span>Spatial Distribution</span> of <span>Boreal Carabid Beetles</span> (<span>Coleoptera</span>: <span>Carabidae</span>).”</span> <em>The Coleopterists Bulletin</em> 59 (4): 465–87. <a href="https://doi.org/10.1649/815.1">https://doi.org/10.1649/815.1</a>.
+</div>
+<div id="ref-laschiMethodologicalApproachExploiting2016" class="csl-entry">
+Laschi, Andrea, Francesco Neri, Niccolò Brachetti Montorselli, and Enrico Marchi. 2016. <span>“A <span>Methodological Approach Exploiting Modern Techniques</span> for <span>Forest Road Network Planning</span>.”</span> <em>Croat. J. For. Eng.</em>, 13.
+</div>
+<div id="ref-narayanarajInfluencesForestRoads2011" class="csl-entry">
+Narayanaraj, Ganapathy, and Michael C. Wimberly. 2011. <span>“Influences of Forest Roads on the Spatial Pattern of Wildfire Boundaries.”</span> <em>International Journal of Wildland Fire</em> 20 (6): 792–803. <a href="https://doi.org/10.1071/WF10032">https://doi.org/10.1071/WF10032</a>.
+</div>
+<div id="ref-ortegaEffectsForestRoads1999" class="csl-entry">
+Ortega, Yvette K., and David E. Capen. 1999. <span>“Effects of <span>Forest Roads</span> on <span>Habitat Quality</span> for <span>Ovenbirds</span> in a <span>Forested Landscape</span>.”</span> <em>The Auk</em> 116 (4): 937–46. <a href="https://doi.org/10.2307/4089673">https://doi.org/10.2307/4089673</a>.
+</div>
+<div id="ref-reedContributionRoadsForest1996" class="csl-entry">
+Reed, Rebecca A., Julia Johnson-Barnard, and William L. Baker. 1996. <span>“Contribution of <span>Roads</span> to <span>Forest Fragmentation</span> in the <span>Rocky Mountains</span>.”</span> <em>Conservation Biology</em> 10 (4): 1098–1106. <a href="https://doi.org/10.1046/j.1523-1739.1996.10041098.x">https://doi.org/10.1046/j.1523-1739.1996.10041098.x</a>.
+</div>
+<div id="ref-remsoftRemsoftRoadOptimizer2019" class="csl-entry">
+Remsoft. 2019. <span>“Remsoft <span>Road Optimizer</span>.”</span>
+</div>
+<div id="ref-shirasawaComparativeStudyHeuristic2014" class="csl-entry">
+Shirasawa, Hiroaki, and Hisashi Hasegawa. 2014. <span>“A Comparative Study of Heuristic Algorithms for the Multiple Target Access Problem.”</span> <em>Journal of Forest Research</em> 19 (5): 437–49. <a href="https://doi.org/10.1007/s10310-013-0432-z">https://doi.org/10.1007/s10310-013-0432-z</a>.
+</div>
+<div id="ref-thompsonForestRoadsOperational2021" class="csl-entry">
+Thompson, Matthew P., Benjamin M. Gannon, and Michael D. Caggiano. 2021. <span>“Forest <span>Roads</span> and <span>Operational Wildfire Response Planning</span>.”</span> <em>Forests</em> 12 (2): 110. <a href="https://doi.org/10.3390/f12020110">https://doi.org/10.3390/f12020110</a>.
+</div>
+<div id="ref-toscani2020forest" class="csl-entry">
+Toscani, Philipp, Walter Sekot, and Franz Holzleitner. 2020. <span>“Forest Roads from the Perspective of Managerial <span>Accounting</span> Evidence from Austria.”</span> <em>Forests</em> 11 (4): 378.
+</div>
+<div id="ref-whittingtonCaribouEncountersWolves2011" class="csl-entry">
+Whittington, Jesse, Mark Hebblewhite, Nicholas J. DeCesare, Lalenia Neufeld, Mark Bradley, John Wilmshurst, and Marco Musiani. 2011. <span>“Caribou Encounters with Wolves Increase Near Roads and Trails: A Time-to-Event Approach: <span>Wolf</span>-Caribou Encounter Rates.”</span> <em>Journal of Applied Ecology</em> 48 (6): 1535–42. <a href="https://doi.org/10.1111/j.1365-2664.2011.02043.x">https://doi.org/10.1111/j.1365-2664.2011.02043.x</a>.
+</div>
+<div id="ref-witmerEffectForestRoads1985" class="csl-entry">
+Witmer, Gary W., and David S. deCalesta. 1985. <span>“Effect of Forest Roads on Habitat Use by <span>Roosevelt</span> Elk.”</span>
+</div>
+<div id="ref-yocomPreviousFiresRoads2019" class="csl-entry">
+Yocom, Larissa L., Jeff Jenness, Peter Z. Fulé, and Andrea E. Thode. 2019. <span>“Previous Fires and Roads Limit Wildfire Growth in <span>Arizona</span> and <span>New Mexico</span>, <span>U</span>.<span>S</span>.<span>A</span>.”</span> <em>Forest Ecology and Management</em> 449 (October): 117440. <a href="https://doi.org/10.1016/j.foreco.2019.06.037">https://doi.org/10.1016/j.foreco.2019.06.037</a>.
+</div>
+<div id="ref-zhangApproachImprovingFirefighting2020" class="csl-entry">
+Zhang, Fuquan, Yuzhen Dong, Shuwen Xu, Xubing Yang, and Haifeng Lin. 2020. <span>“An Approach for Improving Firefighting Ability of Forest Road Network.”</span> <em>Scandinavian Journal of Forest Research</em> 35 (8): 547–61. <a href="https://doi.org/10.1080/02827581.2020.1829029">https://doi.org/10.1080/02827581.2020.1829029</a>.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="02-parametrisation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["frs-module-workshop.pdf", "frs-module-workshop.epub"],
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

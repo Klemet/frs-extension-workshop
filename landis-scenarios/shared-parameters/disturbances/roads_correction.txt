@@ -1,0 +1,66 @@
+>> To be read properly, the parameter file must contain the parameters in this order.
+
+>>------------------------------------------------------------------------
+>> BASIC PARAMETERS
+
+LandisData "Forest Roads Simulation"
+
+Timestep 10
+
+HeuristicForNetworkConstruction Closestfirst
+
+SkiddingDistance 200
+
+LoopingBehavior No
+
+OutputsOfRoadNetworkMaps ./output/disturbances/roads/roadNetwork.tif
+OutputsOfRoadLog ./output/disturbances/roads/
+
+>>------------------------------------------------------------------------
+>> INPUT RASTERS AND COST PARAMETERS
+>> Only the initial road network raster and the distance cost are
+>> essential. If you do not want to use one of the cost for the path-
+>> -finding, just indicate “none” as the parameter value for the raster
+>> location, and “0” for the value of the associated cost.
+
+RasterOfBuildableZones "../shared-rasters/buildable_zones.tif"
+InitialRoadNetworkMap "../shared-rasters/initial_road_network.tif"
+DistanceCost 894.1
+
+CoarseElevationRaster "../shared-rasters/coarse_elevation.tif"
+
+CoarseElevationCosts
+>> Lower elevation      Upper elevation        Additional
+>>    threshold            threshold             value  
+		  0		      		   9            	   0
+		  9		      	   	   16		   		   127.9
+		  16		      	   41		   		   511.5
+		  41	 	      	   10000		   	   10000000
+
+FineElevationRaster None
+
+CoarseWaterRaster "../shared-rasters/coarse_hydrology.tif"
+CoarseWaterCost 1400000
+
+FineWaterRaster None
+
+SoilsRaster None
+>>------------------------------------------------------------------------
+>> ROAD TYPE THRESHOLDS AND MULTIPLICATION VALUES
+>> These parameters are all essential to the functioning of the
+>> extension.
+SimulationOfRoadAging Yes
+SimulationOfWoodFlux  Yes
+
+RoadTypes
+>> Lower Wood Flux      Upper Wood Flux	       Road type     Multiplicative       Maximum age         Road Type
+>>    threshold            threshold               ID          Cost Value      Before destruction      Name
+	  0                       3000                   3              1                  1                Tertiary
+	  3000                    30000                2              2.38               15               Secondary
+	  30000                   100000               1              14.12              25               Primary
+
+RoadTypesForExitingWood
+>> Road type   Road Type
+>>    ID        Name
+      8         Sawmill
+      9         MainRoadNetworkPaved

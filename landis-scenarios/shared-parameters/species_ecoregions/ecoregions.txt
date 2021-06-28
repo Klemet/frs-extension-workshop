@@ -1,0 +1,17 @@
+LandisData Ecoregions
+
+>> Map
+>> Active  Code  Name   Description
+>> ------  ----  -----  -----------
+   no      0     none   "non active cells"
+   yes     127   127    "active landtype"
+   yes     128   128    "active landtype"
+   yes     129   129    "active landtype"
+   yes     207   207    "active landtype"
+   yes     208   208    "active landtype"
+   yes     209   209    "active landtype"
+   yes     210   210    "active landtype"
+   yes     211   211    "active landtype"
+   yes     212   212    "active landtype"
+   yes     213   213    "active landtype"
+   yes     214   214    "active landtype"
