@@ -1,1 +1,8 @@
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). Please see the page "Get Started" at https://bookdown.org/home/about/ for how to compile this example.
+# The FRS module workshop
+
+<center>
+<img src="./imgs/tom-parsons-F5qVefeCrp8-unsplash.jpg" width=50%>
+<br>
+</center>
+
+This repository contains the content of a workshop designed to learn to use the [FRS module](https://klemet.github.io/LANDIS-II-Forest-Roads-Simulation-module/), an extension for the landscape model LANDIS-II.
