@@ -23,7 +23,7 @@ In order to follow the exercise of this section, it is important that you have t
 
 > `r emo::ji("light_bulb")` To install all of these R packages at once, use the command `install.packages("gtools", "dplyr", "raster", "landscapemetrics")` in R.
 
-In addition, **you need to download the data necessary for the exercices**: [`r emo::ji("floppy_disk")` Click here](https://github.com/Klemet) !
+In addition, **you need to download the data necessary for the exercices**: [`r emo::ji("floppy_disk")` Click here](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/Klemet/frs-module-workshop/tree/main/landis-scenarios) !
 
 ## Looking at the FRS module parameter file
 

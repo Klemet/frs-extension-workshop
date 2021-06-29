@@ -24,7 +24,7 @@
 <meta name="author" content="Clément Hardy" />
 
 
-<meta name="date" content="2021-06-28" />
+<meta name="date" content="2021-06-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="01-presentation.html"/>
 <link rel="next" href="03-results-analysis.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -202,7 +202,7 @@ div.csl-indent {
 <blockquote>
 <p>💡 To install all of these R packages at once, use the command <code>install.packages("gtools", "dplyr", "raster", "landscapemetrics")</code> in R.</p>
 </blockquote>
-<p>In addition, <strong>you need to download the data necessary for the exercices</strong>: <a href="https://github.com/Klemet">💾 Click here</a> !</p>
+<p>In addition, <strong>you need to download the data necessary for the exercices</strong>: <a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/Klemet/frs-module-workshop/tree/main/landis-scenarios">💾 Click here</a> !</p>
 </div>
 <div id="looking-at-the-frs-module-parameter-file" class="section level2">
 <h2>Looking at the FRS module parameter file</h2>
@@ -395,7 +395,7 @@ RoadTypesForExitingWood
 <strong>Click for Answer</strong>
 </summary>
 <br>
-<img src="imgs/initial_road_network_correction_visualisation.JPG" />
+<img src="./imgs/initial_road_network_correction_visualisation.jpg" />
 </details>
 <hr />
 <p>Now that the raster is done, you should be able to write the path to the <code>initial_road_network.tif</code> into the <code>roads.txt</code> file.</p>
@@ -482,7 +482,7 @@ You can see that many of the roads in our landscape follow the elevation of the 
 <strong>Click for Answer</strong>
 </summary>
 <br>
-<img src="imgs/coarse_elevation_correction_visualisation.JPG" />
+<img src="./imgs/coarse_elevation_correction_visualisation.jpg" />
 </details>
 <hr />
 <p>Now that the raster is done, you should be able to write the path to the <code>coarse_elevation.tif</code> into the <code>roads.txt</code> file.</p>
@@ -518,7 +518,7 @@ You can see that many of the roads in our landscape follow the elevation of the 
 <strong>Click for Answer</strong>
 </summary>
 <p><br>
-<img src="imgs/bad_water_rasterization.JPG" /></p>
+<img src="./imgs/bad_water_rasterization.jpg" /></p>
 You can see that the rasterized rivers are often not continuous: there are “holes” in the path. These holes are important, as the pathfinding algorithm will use them to “cross” the rivers without taking into account the price of constructing a bridge.
 These “holes” are the result of the algorithm used by the Rasterize tool of QGIS. If a cell superpose just slightly with a polygon, then the polygon isn’t considered as rasterized in this cell. We will have to take care of that.
 </details>
@@ -540,7 +540,7 @@ These “holes” are the result of the algorithm used by the Rasterize tool of 
 <strong>Click for Answer</strong>
 </summary>
 <br>
-<img src="imgs/coarse_water_correction_visualisation.JPG" />
+<img src="./imgs/coarse_water_correction_visualisation.jpg" />
 </details>
 <hr />
 <p>Now that the raster is done, you should be able to write the path to the <code>coarse_water.tif</code> into the <code>roads.txt</code> file.</p>
