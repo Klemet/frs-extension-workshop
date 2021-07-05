@@ -24,7 +24,7 @@
 <meta name="author" content="Clément Hardy" />
 
 
-<meta name="date" content="2021-06-28" />
+<meta name="date" content="2021-06-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="02-parametrisation.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -228,16 +228,16 @@ div.csl-indent {
 <h3>Solving the MTAP</h3>
 <p>To properly understand how the FRS module functions, one has to understand the Multiple Target Access Problem (MTAP). The MTAP is simply the problem of trying to reach multiple targets (nodes) in a graph via roads that link them (vertices) in an optimal way (least-cost, least-distance, best speed, etc.). As the number of targets increase, the number of possible configurations for the resulting road network becomes very great. How, then, can we find the optimal configuration according to a set of priorities ? Which roads (or vertices) should be built, and which ones should not ?</p>
 <center>
-<img src="imgs/MTAP.JPG" />
+<img src="./imgs/MTAP.jpg" />
 </center>
 <p>With the advances in computer technology, the MTAP was formulated and described in the context of forest operations <span class="citation">(<a href="#ref-heinimannForestRoadNetwork2017" role="doc-biblioref">Heinimann 2017</a>)</span>. However, despite the capacity of computer to execute an enormous number of calculations, the MTAP can still be considered unsolvable in reasonable time frames as soon as a certain number of targets is reached, because of the near-infinite number of possible configurations for the network. This is especially true if the “cost” associated with the vertices (as a cost of construction) must be calculated at the same time.</p>
 <p>Meanwhile, there exist another type of problem that computers are able to solve in a very, very short time : the Single Target Access Problem (STAP). In a STAP, as only one target exist, the only calculation that should be made is to determine the best path, road or vertex to the target.</p>
 <center>
-<img src="imgs/STAP.JPG" />
+<img src="./imgs/STAP.jpg" />
 </center>
 <p>The STAP can be easily solved with the use of a pathfinding algorithm, such as the famous Dijkstra algorithm <span class="citation">(<a href="#ref-dijkstraNoteTwoProblems1959" role="doc-biblioref">Dijkstra 1959</a>)</span>. Therefore, one possible way to solve a MTAP is to use a <a href="https://en.wikipedia.org/wiki/Heuristic">heuristic</a> to transform in MTAP into an ordered set of STAPs that will be solved one after the other by a pathfinding algorithm. This approach is used in professional software, such as Remsoft’s Road Optimizer <span class="citation">(<a href="#ref-remsoftRemsoftRoadOptimizer2019" role="doc-biblioref">Remsoft 2019</a>)</span>, and has been used in previous research on the problem of forest road network design <span class="citation">(<a href="#ref-andersonDeterminingOptimalRoad2006" role="doc-biblioref">Anderson, Nelson, and D’Eon 2006</a>; <a href="#ref-heinimannForestRoadNetwork2017" role="doc-biblioref">Heinimann 2017</a>)</span>.</p>
 <center>
-<img src="imgs/MTAP_STAPs.JPG" />
+<img src="./imgs/MTAP_STAPs.jpg" />
 </center>
 <p>Different heuristics can be used, in order to determine the set of STAP to solve <span class="citation">(<a href="#ref-shirasawaComparativeStudyHeuristic2014" role="doc-biblioref">Shirasawa and Hasegawa 2014</a>)</span>. Such heuristics can be “make roads toward target nearest to a road first,” or “make roads to and between targets in a random order.”</p>
 <p>Note that in the MTAP, the targets are already determined. This makes the MTAP different from what is called an “integrated forest harvest-scheduling,” which corresponds to finding the optimal location of areas to harvest, alongside an optimal configuration for the resulting forest road network <span class="citation">(<a href="#ref-heinimannForestRoadNetwork2017" role="doc-biblioref">Heinimann 2017</a>)</span>. The FRS module doesn’t go that far, and lets the harvest extensions of LANDIS-II decide where the harvested areas will be located.</p>
@@ -297,13 +297,13 @@ Anderson, Axel E, John D Nelson, and Robert G D’Eon. 2006. <span>“Determinin
 Boston, Kevin. 2016. <span>“The <span>Potential Effects</span> of <span>Forest Roads</span> on the <span>Environment</span> and <span>Mitigating</span> Their <span>Impacts</span>.”</span> <em>Current Forestry Reports</em> 2 (4): 215–22. <a href="https://doi.org/10.1007/s40725-016-0044-x">https://doi.org/10.1007/s40725-016-0044-x</a>.
 </div>
 <div id="ref-bourgeoisRoutesForestieresAu2005" class="csl-entry">
-Bourgeois, Laurence, Daniel Kneeshaw, and Gaétane Boisseau. 2005. <span>“<span class="nocase">Les routes forestières au Québec : Les impacts environnementaux, sociaux et économiques</span>.”</span> <em>VertigO - La Revue Électronique En Sciences de l’environnement</em>, no. Volume 6 Numéro 2 (September). <a href="https://doi.org/10.4000/vertigo.4352">https://doi.org/10.4000/vertigo.4352</a>.
+Bourgeois, Laurence, Daniel Kneeshaw, and Gaétane Boisseau. 2005. <span>“<span class="nocase">Les routes forestières au Québec : Les impacts environnementaux, sociaux et économiques</span>.”</span> <em>VertigO - La Revue électronique En Sciences de l’environnement</em>, no. Volume 6 Numéro 2 (September). <a href="https://doi.org/10.4000/vertigo.4352">https://doi.org/10.4000/vertigo.4352</a>.
 </div>
 <div id="ref-dijkstraNoteTwoProblems1959" class="csl-entry">
 Dijkstra, E. W. 1959. <span>“A Note on Two Problems in Connexion with Graphs.”</span> <em>Numerische Mathematik</em> 1 (1): 269–71. <a href="https://doi.org/10.1007/BF01386390">https://doi.org/10.1007/BF01386390</a>.
 </div>
 <div id="ref-groupeddmEnqueteCoutsOperation2020" class="csl-entry">
-Groupe DDM, and MFFP du Québec. 2020. <span>“Enquête Sur Les Couts d’opération Forestière Dans Les Forêts Du Domaine de l’<span>État</span> Ainsi Que Sur Les Couts Et Revenus de l’industrie Du Sciage Du <span>Québec</span> 2019.”</span>
+Groupe DDM, and MFFP du Québec. 2020. <span>“Enquête Sur Les Couts d’opération Forestière Dans Les forêts Du Domaine de l’<span>État</span> Ainsi Que Sur Les Couts Et Revenus de l’industrie Du Sciage Du <span>Québec</span> 2019.”</span>
 </div>
 <div id="ref-gucinskiForestRoadsSynthesis2001" class="csl-entry">
 Gucinski, Hermann. 2001. <em>Forest <span>Roads</span>: <span>A Synthesis</span> of <span>Scientific Information</span></em>. <span>DIANE Publishing</span>.
@@ -315,7 +315,7 @@ Hardy, Clément, Christian Messier, Elise Filotas, and Osvaldo Valeria. 2021. <s
 Haskell, David G. 2000. <span>“Effects of <span>Forest Roads</span> on <span>Macroinvertebrate Soil Fauna</span> of the <span>Southern Appalachian Mountains</span>.”</span> <em>Conservation Biology</em> 14 (1): 57–63. <a href="https://doi.org/10.1046/j.1523-1739.2000.99232.x">https://doi.org/10.1046/j.1523-1739.2000.99232.x</a>.
 </div>
 <div id="ref-heinimannForestRoadNetwork2017" class="csl-entry">
-Heinimann, Hans Rudolf. 2017. <span>“Forest <span>Road Network</span> and <span>Transportation Engineering</span>  <span>State</span> and <span>Perspectives</span>.”</span> <em>Croat. J. For. Eng.</em>, 19.
+Heinimann, Hans Rudolf. 2017. <span>“Forest <span>Road Network</span> and <span>Transportation Engineering</span> <span></span> <span>State</span> and <span>Perspectives</span>.”</span> <em>Croat. J. For. Eng.</em>, 19.
 </div>
 <div id="ref-huntManagingForestRoad2009" class="csl-entry">
 Hunt, Len M., R. Harvey Lemelin, and Karen C. Saunders. 2009. <span>“Managing <span>Forest Road Access</span> on <span>Public Lands</span>: <span>A Conceptual Model</span> of <span>Conflict</span>.”</span> <em>Society &amp; Natural Resources</em> 22 (2): 128–42. <a href="https://doi.org/10.1080/08941920801922604">https://doi.org/10.1080/08941920801922604</a>.
@@ -351,7 +351,7 @@ Shirasawa, Hiroaki, and Hisashi Hasegawa. 2014. <span>“A Comparative Study of 
 Thompson, Matthew P., Benjamin M. Gannon, and Michael D. Caggiano. 2021. <span>“Forest <span>Roads</span> and <span>Operational Wildfire Response Planning</span>.”</span> <em>Forests</em> 12 (2): 110. <a href="https://doi.org/10.3390/f12020110">https://doi.org/10.3390/f12020110</a>.
 </div>
 <div id="ref-toscani2020forest" class="csl-entry">
-Toscani, Philipp, Walter Sekot, and Franz Holzleitner. 2020. <span>“Forest Roads from the Perspective of Managerial <span>Accounting</span> Evidence from Austria.”</span> <em>Forests</em> 11 (4): 378.
+Toscani, Philipp, Walter Sekot, and Franz Holzleitner. 2020. <span>“Forest Roads from the Perspective of Managerial <span>Accounting</span><span><span>Empirical</span></span> Evidence from Austria.”</span> <em>Forests</em> 11 (4): 378.
 </div>
 <div id="ref-whittingtonCaribouEncountersWolves2011" class="csl-entry">
 Whittington, Jesse, Mark Hebblewhite, Nicholas J. DeCesare, Lalenia Neufeld, Mark Bradley, John Wilmshurst, and Marco Musiani. 2011. <span>“Caribou Encounters with Wolves Increase Near Roads and Trails: A Time-to-Event Approach: <span>Wolf</span>-Caribou Encounter Rates.”</span> <em>Journal of Applied Ecology</em> 48 (6): 1535–42. <a href="https://doi.org/10.1111/j.1365-2664.2011.02043.x">https://doi.org/10.1111/j.1365-2664.2011.02043.x</a>.
