@@ -72,7 +72,7 @@ In order to do the exercices of the workshop, you will need the following softwa
   - Package `raster`
   - Package `landscapemetrics`
 
-> `r emo::ji("light_bulb")` To install all of these R packages at once, use the command `install.packages("gtools", "dplyr", "raster", "landscapemetrics")` in R.
+> `r emo::ji("light_bulb")` To install all of these R packages at once, use the command `install.packages(c("gtools", "dplyr", "raster", "landscapemetrics"))` in R.
 
 ## Presenter
 
