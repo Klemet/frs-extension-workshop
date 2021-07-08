@@ -24,7 +24,7 @@
 <meta name="author" content="Clément Hardy" />
 
 
-<meta name="date" content="2021-06-29" />
+<meta name="date" content="2021-07-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -247,7 +247,7 @@ Currently, all of the cells of the roadNetwork-Cost Raster.tif raster contain th
 <strong>Click for Answer</strong>
 </summary>
 <p><br>
-<img src="./imgs/roadNetwork-60_homogeneous_cost.jpg" /></p>
+<img src="imgs/roadNetwork-60_homogeneous_cost.JPG" /></p>
 At the time step 60, the initial roads have disparead because if road aging, and have been replaced by roads entirely constructed by the FRS module. We can see that many of the roads built by the module are straight lines. This is because the cost of construction is the same in all of the cells of the cost map: in those conditions, the least-cost path between two points found by the pathfinding algorithm is always a straight line. Therefore, if you see straight lines in your results, you can be sure that it is because the FRS module traversed an area with an homogeneous cost of construction. This is often a sign that something is wrong in the parameterization.
 </details>
 <hr />
@@ -263,7 +263,7 @@ At the time step 60, the initial roads have disparead because if road aging, and
 <strong>Click for Answer</strong>
 </summary>
 <p><br>
-<img src="./imgs/cost_map_just_elevation.jpg" /></p>
+<img src="imgs/cost_map_just_elevation.JPG" /></p>
 Now, we can see that the cost map is not entirely homogeneous anymore. We can now distinguish 4 different types of costs, which correspond to the 4 levels of slope that we defined : 0-9%, 9-16%, 16-41%, and 41% to maximum values. Hence, the cost map became much more complex than before.
 </details>
 <hr />
@@ -274,7 +274,7 @@ Now, we can see that the cost map is not entirely homogeneous anymore. We can no
 <strong>Click for Answer</strong>
 </summary>
 <p><br>
-<img src="./imgs/roadNetwork-60_only_elevation.jpg" /></p>
+<img src="imgs/roadNetwork-60_only_elevation.JPG" /></p>
 We can see that the simulated road network contains a lot less “straight” roads, and that the path of the roads is often in less costly pixels. However, we can still notice some straight roads where areas of homogeneous cost exist.
 </details>
 <hr />
@@ -290,7 +290,7 @@ We can see that the simulated road network contains a lot less “straight” ro
 <strong>Click for Answer</strong>
 </summary>
 <p><br>
-<img src="./imgs/cost_map_elevation_hydrography.jpg" />
+<img src="imgs/cost_map_elevation_hydrography.JPG" />
 <em>On this image, the pixels containing bodies of water have been colored in blue so as to better distinguish them from the rest.</em></p>
 We can now see that the cost map is complex and detailed. Homogeneous areas in terms of cost are few, and the pathfinding algorithm will have many features to avoid (steep slopes, lakes and rivers).
 </details>
@@ -302,7 +302,7 @@ We can now see that the cost map is complex and detailed. Homogeneous areas in t
 <strong>Click for Answer</strong>
 </summary>
 <p><br>
-<img src="./imgs/roadNetwork-60_elevation_hydrography.jpg" /></p>
+<img src="imgs/roadNetwork-60_elevation_hydrography.JPG" /></p>
 We can see that the simulated road network now contains very few “straight” roads, and that road paths tend to follow elevation lines, and especially riverbeds.
 </details>
 <hr />
