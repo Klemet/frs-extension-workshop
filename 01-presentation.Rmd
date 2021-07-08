@@ -6,7 +6,7 @@ Forest roads are a particular type of roads [@gucinskiForestRoadsSynthesis2001].
 
 Forest roads are not always taken into account when talking about the effects and impacts of forest management. However, they can have important effects on forest ecosystems  [@bostonPotentialEffectsForest2016]. Indeed, they have been shown to :
 
-- Reduce the surrounding macroinvertebrate soil faune [@haskellEffectsForestRoads2000]
+- Reduce the surrounding macroinvertebrate soil fauna [@haskellEffectsForestRoads2000]
 - Reduce the abundance of some beetles [@koivulaEffectsForestRoads2005]
 - Alter the quality of habitat for several species of birds [@ortegaEffectsForestRoads1999]
 - Fragment the forest landscape more than clearcuts do [@reedContributionRoadsForest1996]
@@ -25,7 +25,7 @@ As you can see, forest roads can have many different impacts, and are important 
 
 - How do different forest management strategies fragment the landscape, when forest roads are taken into account ?
 - What will be the impact of forest roads on endangered species, as they increase the movement of potential predators ?
-- How will forest roads constructed in a newly harvested area affect hunting pressure
+- How will forest roads constructed in a newly harvested area affect hunting pressure ?
 
 * * *
 
