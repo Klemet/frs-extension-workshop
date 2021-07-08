@@ -21,6 +21,6 @@ DisturbancesRandomOrder no
 
 >> Output Extensions Initialization File
 >> ----------------- -------------------
-"Output Cohort Statistics" ../shared-parameters/output/cohortStatistics.txt
+>> "Output Cohort Statistics" ../shared-parameters/output/cohortStatistics.txt
 
 RandomNumberSeed 1999154641
