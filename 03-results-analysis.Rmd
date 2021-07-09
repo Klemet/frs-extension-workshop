@@ -177,7 +177,7 @@ Now, open the raster roadNetwork-60.tif from the scenario with and without aggre
 <details>
   <summary>**Click for Answer**</summary>
   <br>
-    We can see that in the scenario with aggregation, forest roads are less "scattered" than in the scenario with aggregation. They form dense networks of smaller roads inside the large cut areas, and link those together with higher-type roads traversing the landscape. In the scenario with aggregation, those patches of smaller roads corresponding to harvested areas are more scattered, leading to more higher-type roads linking them together.
+    We can see that in the scenario with aggregation, forest roads are less "scattered" than in the scenario without aggregation. They form dense networks of smaller roads inside the large cut areas, and link those together with higher-type roads traversing the landscape. In the scenario without aggregation, those patches of smaller roads corresponding to harvested areas are more scattered, leading to more higher-type roads linking them together.
 </details>
 * * *
 
@@ -217,7 +217,7 @@ This price of road upgrade is increased even more by the fact that the FRS modul
 
 **Therefore, remember that the FRS module can currently present behaviours that might seem strange in initial timesteps. These can be due to the particular configuration of harvested areas, or the structure of the initial road network.**
 
-The second part of the graph shows no clear differences between the scenario with and without aggregation of the cuts, in terms of costs of construction and repairs. This is due to the fact that while the scenario with aggregation might result in fewer roads, it also requires a higher proportion of large roads to accomodate the flux of timber trucks that will pass through this smaller amount of roads. This conclusion remains very sensitive to the flux threshold parameters for each road types, and should be taken with a grain of salt.
+The second part of the graph shows no clear differences between the scenario with and without aggregation of the cuts, in terms of costs of construction and repairs. This is due to the fact that while the scenario with aggregation might result in fewer roads, it also requires a higher proportion of large roads to accommodate the flux of timber trucks that will pass through this smaller amount of roads. This conclusion remains very sensitive to the flux threshold parameters for each road types, and should be taken with a grain of salt.
 </details>
 * * *
 
