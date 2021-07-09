@@ -194,12 +194,13 @@ div.csl-indent {
 <ul>
 <li>Package <code>gtools</code></li>
 <li>Package <code>dplyr</code></li>
+<li>Package <code>rgdal</code></li>
 <li>Package <code>raster</code></li>
 <li>Package <code>landscapemetrics</code></li>
 </ul></li>
 </ul>
 <blockquote>
-<p>💡 To install all of these R packages at once, use the command <code>install.packages(c("gtools", "dplyr", "raster", "landscapemetrics"))</code> in R.</p>
+<p>💡 To install all of these R packages at once, use the command <code>install.packages(c("gtools", "dplyr", "rgdal", "raster", "landscapemetrics"))</code> in R.</p>
 </blockquote>
 <p>In addition, <strong>you need to download the data necessary for the exercices</strong>: <a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/Klemet/frs-module-workshop/tree/main/landis-scenarios">💾 Click here</a> !</p>
 <blockquote>
@@ -338,7 +339,7 @@ We can see that the cut areas in the scenario with aggregation are fewer, but mu
 <strong>Click for Answer</strong>
 </summary>
 <br>
-We can see that in the scenario with aggregation, forest roads are less “scattered” than in the scenario with aggregation. They form dense networks of smaller roads inside the large cut areas, and link those together with higher-type roads traversing the landscape. In the scenario with aggregation, those patches of smaller roads corresponding to harvested areas are more scattered, leading to more higher-type roads linking them together.
+We can see that in the scenario with aggregation, forest roads are less “scattered” than in the scenario without aggregation. They form dense networks of smaller roads inside the large cut areas, and link those together with higher-type roads traversing the landscape. In the scenario without aggregation, those patches of smaller roads corresponding to harvested areas are more scattered, leading to more higher-type roads linking them together.
 </details>
 <hr />
 </div>
@@ -370,7 +371,7 @@ The drastic decrease at the beginning of the simulation is due to the initial ro
 <p>First, let’s look at the initial decrease. It comes from the fact that the first time step (<em>t</em> = 10) starts with a very important cost of construction. This can seem counter-intuitive, as the initial landscape contains many roads that the FRS module can use instead of build. However, if we look at the outputs of LANDIS-II, we can see that this timestep contains many harvested area in the top-right of our landscape in both scenarios (resulting from patches of older forest that are favoured by the harvest extension). This leads to a huge flux of timber that passes through the initial road landscape, requiring to upgrade many road pixels to primary roads (which are very expensive) to adapt to this flux.</p>
 <p>This price of road upgrade is increased even more by the fact that the FRS module will go through the existing, initial road network so as to avoid building roads. However, this forces it to use a long path to reach the main road network in the south, as the initial road network does not present a road that is relatively short to reach it. In future version, the FRS module will be able to find a better option.</p>
 <p><strong>Therefore, remember that the FRS module can currently present behaviours that might seem strange in initial timesteps. These can be due to the particular configuration of harvested areas, or the structure of the initial road network.</strong></p>
-The second part of the graph shows no clear differences between the scenario with and without aggregation of the cuts, in terms of costs of construction and repairs. This is due to the fact that while the scenario with aggregation might result in fewer roads, it also requires a higher proportion of large roads to accomodate the flux of timber trucks that will pass through this smaller amount of roads. This conclusion remains very sensitive to the flux threshold parameters for each road types, and should be taken with a grain of salt.
+The second part of the graph shows no clear differences between the scenario with and without aggregation of the cuts, in terms of costs of construction and repairs. This is due to the fact that while the scenario with aggregation might result in fewer roads, it also requires a higher proportion of large roads to accommodate the flux of timber trucks that will pass through this smaller amount of roads. This conclusion remains very sensitive to the flux threshold parameters for each road types, and should be taken with a grain of salt.
 </details>
 <hr />
 <p>Now, run the commands of the section 7. Look at the plots that the script have generated (showing the evolution of the Clumpy and TCA fragmentation indices through time). <strong>What do you notice ? How do you interpret it ?</strong></p>
