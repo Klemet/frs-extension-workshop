@@ -69,10 +69,11 @@ In order to do the exercices of the workshop, you will need the following softwa
 - [R](https://www.r-project.org/) or [R studio](https://www.rstudio.com/)
   - Package `gtools`
   - Package `dplyr`
+  - Package `rgdal`
   - Package `raster`
   - Package `landscapemetrics`
 
-> `r emo::ji("light_bulb")` To install all of these R packages at once, use the command `install.packages(c("gtools", "dplyr", "raster", "landscapemetrics"))` in R.
+> `r emo::ji("light_bulb")` To install all of these R packages at once, use the command `install.packages(c("gtools", "dplyr", "rgdal", "raster", "landscapemetrics"))` in R.
 
 ## Presenter
 
