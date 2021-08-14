@@ -21,10 +21,8 @@
   <meta name="twitter:description" content="This webpage contains the content of a training workshop for the Forest Roads Simulation (FRS) module developed for the LANDIS-II model." />
   <meta name="twitter:image" content="https://github.com/Klemet/Workshop-FRS-Module/./imgs/Logo Module FRS.png" />
 
-<meta name="author" content="Clément Hardy" />
 
 
-<meta name="date" content="2021-07-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -79,7 +77,7 @@ div.csl-indent {
 }
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="book.css" type="text/css" />
 </head>
 
 <body>
@@ -92,7 +90,7 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">FRS module workshop</a></li>
+<li class='before'><a href="./">FRS module workshop</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
@@ -177,25 +175,19 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="header">
 <h1 class="title">The FRS Module Training Workshop</h1>
-<p class="author"><em>Clément Hardy</em></p>
-<p class="date" style="margin-top: 1.5em;"><em>2021-07-08</em></p>
 </div>
 <div id="welcome" class="section level1 unnumbered">
 <h1>Welcome</h1>
-<center>
+<div style="font-family:Lato; font-size:30px; text-align: center !important; width: 100%  !important;">
 <p><strong>Welcome to the training workshop of the FRS module !</strong>
-</br>
 </br></p>
-<img src="imgs/Logo%20Module%20FRS.png" />
-</br>
-</br>
-</br>
-</center>
+<p><img src="imgs/Logo%20Module%20FRS.png" />
+</br></p>
+</div>
 <p>The <strong>Forest Roads Simulation (FRS) module</strong> is an extension of the LANDIS-II Forest Landscape Model (FLM). It was created so as to <strong>help researchers in ecology to take into account the constructions of forest roads</strong> when studying the impacts of forest management on forest landscapes.</p>
 <hr />
 <p><strong>Before you start :</strong></p>
 <ul>
-<li>✒️ <em>Change the appearance of the page to your liking by clicking the <code>A</code> button at the top left of the screen.</em></li>
 <li>⬅️ ➡️ <em>Move between the pages of the workshop by using the right and left arrows of your keyboard, or by using the table of content on your left.</em></li>
 <li>🕓 <em>Plan 3 to 4 hours of reading and exercises if you want to read everything in details.</em></li>
 </ul>
@@ -245,14 +237,11 @@ div.csl-indent {
 </div>
 <div id="presenter" class="section level2">
 <h2>Presenter</h2>
-<center>
+<div style="font-family:Lato; font-size:30px; text-align: center !important; width: 100%  !important;">
 <p></br></p>
-<img src="imgs/clement.png" />
-</br>
-<span style="font-family:Lato; font-size:30px;"><strong>Clément Hardy</strong></span>
-</br>
-</br>
-</center>
+<p><img src="imgs/clement.png" />
+<a href="https://github.com/Klemet"><strong>Clément Hardy</strong></a></p>
+</div>
 <p>I am a PhD student in forest ecology, under the supervision of <a href="http://elisefilotas.ca/en/home/">Elise Filotas</a> and <a href="www.cef-cfr.ca/index.php?n=Membres.ChristianMessier?userlang=en">Christian Messier</a>.</p>
 <p>I am also the developer of the FRS module, and my PhD subject concerns the long-term and large scale impacts of uneven-aged management. If you want to learn more about it, check out my <a href="https://github.com/Klemet">GitHub page</a> !</p>
 
@@ -292,7 +281,7 @@ gitbook.start({
 },
 "fontsettings": {
 "theme": "white",
-"family": "serif",
+"family": "sans",
 "size": 2
 },
 "edit": {

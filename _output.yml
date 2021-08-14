@@ -1,16 +1,16 @@
 bookdown::gitbook:
   number_sections: false
   split_by: rmd
-  css: style.css
+  css: book.css
   config:
     fontsettings:
       theme: white
-      family: serif
+      family: sans
       size: 2
     toc:
       scroll_highlight: yes
       before: |
-        <li><a href="./">FRS module workshop</a></li>
+        <li class='before'><a href="./">FRS module workshop</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
     download: ["pdf", "epub"]

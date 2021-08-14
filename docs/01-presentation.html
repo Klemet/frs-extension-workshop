@@ -21,10 +21,8 @@
   <meta name="twitter:description" content="This webpage contains the content of a training workshop for the Forest Roads Simulation (FRS) module developed for the LANDIS-II model." />
   <meta name="twitter:image" content="https://github.com/Klemet/Workshop-FRS-Module/./imgs/Logo Module FRS.png" />
 
-<meta name="author" content="Clément Hardy" />
 
 
-<meta name="date" content="2021-07-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -79,7 +77,7 @@ div.csl-indent {
 }
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="book.css" type="text/css" />
 </head>
 
 <body>
@@ -92,7 +90,7 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">FRS module workshop</a></li>
+<li class='before'><a href="./">FRS module workshop</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
@@ -206,7 +204,9 @@ div.csl-indent {
 <h2>The FRS module</h2>
 <p>The Forest Road Simulation (FRS) module is an extension for LANDIS-II, whose goal is to <strong>dynamically simulate a forest road network according to the harvested areas in the landscape</strong>.</p>
 <p>Here is an animation showing the evolution of road networks simulated with the FRS module in Quebec :</p>
+<div style="font-family:Lato; font-size:30px; text-align: center !important; width: 100%  !important;">
 <p><img src="imgs/animation150Years.gif" /></p>
+</div>
 <div id="goals-of-the-frs-module" class="section level3">
 <h3>Goals of the FRS module</h3>
 <p>The FRS module was designed with 4 considerations in mind :</p>
@@ -227,18 +227,18 @@ div.csl-indent {
 <div id="solving-the-mtap" class="section level3">
 <h3>Solving the MTAP</h3>
 <p>To properly understand how the FRS module functions, one has to understand the Multiple Target Access Problem (MTAP). The MTAP is simply the problem of trying to reach multiple targets (nodes) in a graph via roads that link them (vertices) in an optimal way (least-cost, least-distance, best speed, etc.). As the number of targets increase, the number of possible configurations for the resulting road network becomes very great. How, then, can we find the optimal configuration according to a set of priorities ? Which roads (or vertices) should be built, and which ones should not ?</p>
-<center>
-<img src="imgs/MTAP.JPG" />
-</center>
+<div style="font-family:Lato; font-size:30px; text-align: center !important; width: 100%  !important;">
+<p><img src="imgs/MTAP.JPG" /></p>
+</div>
 <p>With the advances in computer technology, the MTAP was formulated and described in the context of forest operations <span class="citation">(<a href="#ref-heinimannForestRoadNetwork2017" role="doc-biblioref">Heinimann 2017</a>)</span>. However, despite the capacity of computer to execute an enormous number of calculations, the MTAP can still be considered unsolvable in reasonable time frames as soon as a certain number of targets is reached, because of the near-infinite number of possible configurations for the network. This is especially true if the “cost” associated with the vertices (as a cost of construction) must be calculated at the same time.</p>
 <p>Meanwhile, there exist another type of problem that computers are able to solve in a very, very short time : the Single Target Access Problem (STAP). In a STAP, as only one target exist, the only calculation that should be made is to determine the best path, road or vertex to the target.</p>
-<center>
-<img src="imgs/STAP.JPG" />
-</center>
+<div style="font-family:Lato; font-size:30px; text-align: center !important; width: 100%  !important;">
+<p><img src="imgs/STAP.JPG" /></p>
+</div>
 <p>The STAP can be easily solved with the use of a pathfinding algorithm, such as the famous Dijkstra algorithm <span class="citation">(<a href="#ref-dijkstraNoteTwoProblems1959" role="doc-biblioref">Dijkstra 1959</a>)</span>. Therefore, one possible way to solve a MTAP is to use a <a href="https://en.wikipedia.org/wiki/Heuristic">heuristic</a> to transform in MTAP into an ordered set of STAPs that will be solved one after the other by a pathfinding algorithm. This approach is used in professional software, such as Remsoft’s Road Optimizer <span class="citation">(<a href="#ref-remsoftRemsoftRoadOptimizer2019" role="doc-biblioref">Remsoft 2019</a>)</span>, and has been used in previous research on the problem of forest road network design <span class="citation">(<a href="#ref-andersonDeterminingOptimalRoad2006" role="doc-biblioref">Anderson, Nelson, and D’Eon 2006</a>; <a href="#ref-heinimannForestRoadNetwork2017" role="doc-biblioref">Heinimann 2017</a>)</span>.</p>
-<center>
-<img src="imgs/MTAP_STAPs.JPG" />
-</center>
+<div style="font-family:Lato; font-size:30px; text-align: center !important; width: 100%  !important;">
+<p><img src="imgs/MTAP_STAPs.JPG" /></p>
+</div>
 <p>Different heuristics can be used, in order to determine the set of STAP to solve <span class="citation">(<a href="#ref-shirasawaComparativeStudyHeuristic2014" role="doc-biblioref">Shirasawa and Hasegawa 2014</a>)</span>. Such heuristics can be “make roads toward target nearest to a road first,” or “make roads to and between targets in a random order.”</p>
 <p>Note that in the MTAP, the targets are already determined. This makes the MTAP different from what is called an “integrated forest harvest-scheduling,” which corresponds to finding the optimal location of areas to harvest, alongside an optimal configuration for the resulting forest road network <span class="citation">(<a href="#ref-heinimannForestRoadNetwork2017" role="doc-biblioref">Heinimann 2017</a>)</span>. The FRS module doesn’t go that far, and lets the harvest extensions of LANDIS-II decide where the harvested areas will be located.</p>
 <p>Therefore, the FRS module solves an MTAP using a heuristics, and lets the user choose amongst three : “Closest first” (build roads to area closest to existing roads first); “Farthest first” (the opposite of “Closest first”); and “Random” (build roads to harvested areas in a random order). To determine the path of the roads in space, the FRS module uses the Dijkstra algorithm, along with a cost map.</p>
@@ -252,9 +252,9 @@ div.csl-indent {
 <p>LANDIS-II simulations always start with an initialisation phase, during which the different rasters needed by the model are read, the parameters read, and the different extensions prepared for the rest of the simulation.</p>
 <p>The FRS module uses the initialisation phase to create what is called the “cost map.” <strong>The cost map is a raster map in which each pixel represent the estimated cost of construction to construct a road in order to cross the pixel, whatever the direction of the crossing</strong>.</p>
 <p>Here is an example of a cost map generated by the FRS module :</p>
-<center>
-<img src="imgs/cost_raster.png" />
-</center>
+<div style="font-family:Lato; font-size:30px; text-align: center !important; width: 100%  !important;">
+<p><img src="imgs/cost_raster.png" /></p>
+</div>
 <p>On this cost map, you can see water bodies very clearly, as they require constructing bridges that can be very costly to construct, or even prohibited depending on the legislation in place. The path of streams are visible, as they require one or multiple culverts to be posed to traverse them. Then, you can see that the costs of constructions change according to the slope.</p>
 <p>To create such a map, the FRS module uses maps of landscape features and several cost parameters associated to them. Only one landscape feature - and its associated parameters - is necessary; the others are optional, in order to adapt to what data the user has at hand. However, the more features are taken into account, the more the roads created by the module will be realistic.</p>
 <p>Currently, the FRS module can take into account :</p>
@@ -400,7 +400,7 @@ gitbook.start({
 },
 "fontsettings": {
 "theme": "white",
-"family": "serif",
+"family": "sans",
 "size": 2
 },
 "edit": {

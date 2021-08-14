@@ -21,10 +21,8 @@
   <meta name="twitter:description" content="This webpage contains the content of a training workshop for the Forest Roads Simulation (FRS) module developed for the LANDIS-II model." />
   <meta name="twitter:image" content="https://github.com/Klemet/Workshop-FRS-Module/./imgs/Logo Module FRS.png" />
 
-<meta name="author" content="Clément Hardy" />
 
 
-<meta name="date" content="2021-07-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -79,7 +77,7 @@ div.csl-indent {
 }
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="book.css" type="text/css" />
 </head>
 
 <body>
@@ -92,7 +90,7 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">FRS module workshop</a></li>
+<li class='before'><a href="./">FRS module workshop</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
@@ -325,7 +323,7 @@ RoadTypesForExitingWood
 <p>Now, you should be able to write the path to the <code>buildable_zones.tif</code> raster into the <code>roads.txt</code> file.</p>
 <p>The path should look like this in <code>roads.txt</code>:</p>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -391,7 +389,7 @@ RoadTypesForExitingWood
 </ul>
 <p>The resulting raster should look like this:</p>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -402,7 +400,7 @@ RoadTypesForExitingWood
 <p>Now that the raster is done, you should be able to write the path to the <code>initial_road_network.tif</code> into the <code>roads.txt</code> file.</p>
 <p>The path should look like this in <code>roads.txt</code>:</p>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -430,7 +428,7 @@ RoadTypesForExitingWood
 <p>When you are done, write the value of the basal distance cost and the additional costs due to the elevation into the <code>roads.txt</code> file. Remember that the additional elevation cost for a slope of 0 to 9% is going to be 0, as this is the level of reference. For slope degrees superior to 41%, input a punitive value in order to prevent the FRS module from building roads onto such a slope.</p>
 <p>In the end, the parameters should look like this in <code>roads.txt</code>:</p>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -456,7 +454,7 @@ RoadTypesForExitingWood
 <li>[Optional] If you still have the initial road network opened as a layer in QGIS, look at its superposition with the elevation rasters that you added. <strong>Do you notice anything ?</strong></li>
 </ul>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -478,7 +476,7 @@ You can see that many of the roads in our landscape follow the elevation of the 
 </ul>
 <p>The resulting raster should look like this :</p>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -489,7 +487,7 @@ You can see that many of the roads in our landscape follow the elevation of the 
 <p>Now that the raster is done, you should be able to write the path to the <code>coarse_elevation.tif</code> into the <code>roads.txt</code> file.</p>
 <p>The path should look like this in <code>roads.txt</code> :</p>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -514,7 +512,7 @@ You can see that many of the roads in our landscape follow the elevation of the 
 <li><strong>Look at the resulting raster</strong>. Do you notice anything important ?</li>
 </ul>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -536,7 +534,7 @@ These “holes” are the result of the algorithm used by the Rasterize tool of 
 </ul>
 <p>The resulting raster should look like this :</p>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -547,7 +545,7 @@ These “holes” are the result of the algorithm used by the Rasterize tool of 
 <p>Now that the raster is done, you should be able to write the path to the <code>coarse_water.tif</code> into the <code>roads.txt</code> file.</p>
 <p>The path should look like this in <code>roads.txt</code>:</p>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -568,7 +566,7 @@ These “holes” are the result of the algorithm used by the Rasterize tool of 
 <p>Here, we will use the three road types present in the database of cost that we saw in exercice : <code>Primary</code>, <code>Secondary</code> and <code>Tertiary</code>. You can start inputting them in <code>roads.txt</code>.</p>
 <p>The section describing the road types in <code>roads.txt</code> should look like this:</p>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -590,7 +588,7 @@ These “holes” are the result of the algorithm used by the Rasterize tool of 
 <p>We will use use flux thresholds that we determined empirically, and that are of <code>0</code>-<code>70</code> for <code>Tertiary</code> roads; <code>70</code>-<code>40000</code> for <code>Secondary</code> roads; and <code>40000</code>-<code>100000</code> for <code>Primary</code> roads. You can input these in <code>roads.txt</code>.</p>
 <p>The section describing the road types in <code>roads.txt</code> should look like this:</p>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -613,7 +611,7 @@ These “holes” are the result of the algorithm used by the Rasterize tool of 
 <p>To compute those costs, simply execute in R or R studio the sections 10 and 11 of the R script <code>correction_script_to_get_parameters.R</code>.</p>
 <p>In the end, the parameters should look like this in <code>roads.txt</code>:</p>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -633,7 +631,7 @@ These “holes” are the result of the algorithm used by the Rasterize tool of 
 <p>In our case, we will use ages specified in the classification of roads by the MFFP of Quebec. Theses maximum ages before destruction for <code>Tertiary</code>, <code>Secondary</code> and <code>Primary</code> road types will thus be <code>1</code>, <code>15</code> and <code>25</code> respectively.</p>
 <p>You can input those parameters in <code>roads.txt</code>, which will end the exercice. The parameters related to the road types should look like this:</p>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -652,7 +650,7 @@ These “holes” are the result of the algorithm used by the Rasterize tool of 
 <p>Now that the exercice is over, you can check if you’ve filled the <code>roads.txt</code> filled correctly by comparing your version with the file <code>roads_correction.txt</code> present in the same folder.</p>
 <p>Here is the content of <code>roads_correction.txt</code>:</p>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -772,7 +770,7 @@ gitbook.start({
 },
 "fontsettings": {
 "theme": "white",
-"family": "serif",
+"family": "sans",
 "size": 2
 },
 "edit": {

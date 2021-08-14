@@ -21,10 +21,8 @@
   <meta name="twitter:description" content="This webpage contains the content of a training workshop for the Forest Roads Simulation (FRS) module developed for the LANDIS-II model." />
   <meta name="twitter:image" content="https://github.com/Klemet/Workshop-FRS-Module/./imgs/Logo Module FRS.png" />
 
-<meta name="author" content="Clément Hardy" />
 
 
-<meta name="date" content="2021-07-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -79,7 +77,7 @@ div.csl-indent {
 }
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="book.css" type="text/css" />
 </head>
 
 <body>
@@ -92,7 +90,7 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">FRS module workshop</a></li>
+<li class='before'><a href="./">FRS module workshop</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
@@ -233,7 +231,7 @@ div.csl-indent {
 <p>The roadNetwork-Cost Raster.tif raster is a raster representing the “cost map” as computed by the FRS module, according to the cost parameters and maps that we entered. In each of its cell is the estimated average construction cost of a forest road traversing the cell, for a reference road type (see section 2). This “cost map” is used by the pathfinding algorithm of the FRS module in charge of deciding the path of the roads.</p>
 <p>Look at this raster. <strong>Do you notice anything strange ?</strong></p>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -243,7 +241,7 @@ Currently, all of the cells of the roadNetwork-Cost Raster.tif raster contain th
 <hr />
 <p>Now, look at the roadNetwork-60.tif raster, which contains a snapshot of the roads landscape at the end of the first timestep of the simulation. <strong>Do you notice anything strange ?</strong></p>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -259,7 +257,7 @@ At the time step 60, the initial roads have disparead because if road aging, and
 <p>Relaunch the file run-scenario-no-aggregation.bat locateed in the folder scenario-no-aggregation, and once again, wait after LANDIS-II has reached the 6th time step to stop the simulation. Open the rasters roadNetwork-Cost Raster.tif and roadNetwork-60.tif in QGIS again.</p>
 <p>Look at roadNetwork-Cost Raster.tif in QGIS. Double click on the layer corresponding to it in the layer menu, and change its colors in the Symbology tab. What do you see ?</p>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -270,7 +268,7 @@ Now, we can see that the cost map is not entirely homogeneous anymore. We can no
 <hr />
 <p>Now, look at the roadNetwork-60.tif raster in QGIS. Try to superimpose it to the cost map. What differences do you notice with what it was before ?</p>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -286,7 +284,7 @@ We can see that the simulated road network contains a lot less “straight” ro
 <p>Relaunch the file run-scenario-no-aggregation.bat locateed in the folder scenario-no-aggregation, and once again, wait after LANDIS-II has reached the 6th time step to stop the simulation. Open the rasters roadNetwork-Cost Raster.tif and roadNetwork-60.tif in QGIS again.</p>
 <p>Look at roadNetwork-Cost Raster.tif in QGIS. Double click on the layer corresponding to it in the layer menu, and change its colors in the Symbology tab. What do you see ?</p>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -298,7 +296,7 @@ We can now see that the cost map is complex and detailed. Homogeneous areas in t
 <hr />
 <p>Now, look at the roadNetwork-60.tif raster in QGIS. Try to superimpose it to the cost map. What differences do you notice with what it was before ?</p>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -324,7 +322,7 @@ We can see that the simulated road network now contains very few “straight” 
 <h2>Looking at the outputs with QGIS</h2>
 <p>Go into the scenario-no-aggregation/output/harvest folder, and load the raster prescripts-10.tif as a layer in LANDIS-II. Now, do the same for the scenario-with-aggregation folder. <strong>What do you notice ?</strong></p>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -334,7 +332,7 @@ We can see that the cut areas in the scenario with aggregation are fewer, but mu
 <hr />
 <p>Now, open the raster roadNetwork-60.tif from the scenario with and without aggregation in QGIS. <strong>What differences do you notice between the two ?</strong></p>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -349,7 +347,7 @@ We can see that in the scenario with aggregation, forest roads are less “scatt
 <p><strong>Run the script line by line up to section 5 of the script</strong>, reading the commentaries present in the script as you go. if you are not familiar with R code, you can take the time to understand in detail what the different commands correspond to.</p>
 <p>Once that you have ran all of the commands of the section 5 of the script, look at the plot that the script have generated (showing the evolution of the road density in the landscape through time). <strong>What do you notice ? How do you interpret it ?</strong></p>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -361,7 +359,7 @@ The drastic decrease at the beginning of the simulation is due to the initial ro
 <hr />
 <p>Now, run the commands of the section 6. Look at the plot that the script have generated (showing the evolution of the road costs through time). <strong>What do you notice ? How do you interpret it ?</strong></p>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -376,7 +374,7 @@ The second part of the graph shows no clear differences between the scenario wit
 <hr />
 <p>Now, run the commands of the section 7. Look at the plots that the script have generated (showing the evolution of the Clumpy and TCA fragmentation indices through time). <strong>What do you notice ? How do you interpret it ?</strong></p>
 <hr />
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
 <summary>
 <strong>Click for Answer</strong>
 </summary>
@@ -430,7 +428,7 @@ gitbook.start({
 },
 "fontsettings": {
 "theme": "white",
-"family": "serif",
+"family": "sans",
 "size": 2
 },
 "edit": {

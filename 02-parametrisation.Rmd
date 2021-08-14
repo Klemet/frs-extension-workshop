@@ -162,7 +162,7 @@ Now, you should be able to write the path to the `buildable_zones.tif` raster in
 The path should look like this in `roads.txt`:
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
     `RasterOfBuildableZones "../shared-rasters/buildable_zones.tif"`
@@ -217,7 +217,7 @@ Now, we can "burn" the `TYPE_ID` attribute associated to each line into raster c
 The resulting raster should look like this:
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
     ![](./imgs/initial_road_network_correction_visualisation.jpg)
@@ -229,7 +229,7 @@ Now that the raster is done, you should be able to write the path to the `initia
 The path should look like this in `roads.txt`:
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
     `InitialRoadNetworkMap "../shared-rasters/initial_road_network.tif"`
@@ -262,7 +262,7 @@ When you are done, write the value of the basal distance cost and the additional
 In the end, the parameters should look like this in `roads.txt`:
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
     `DistanceCost 894.1`
@@ -291,7 +291,7 @@ Then, follow these instructions in QGIS to create the elevation map for our simu
 - [Optional] If you still have the initial road network opened as a layer in QGIS, look at its superposition with the elevation rasters that you added. **Do you notice anything ?**
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
     You can see that many of the roads in our landscape follow the elevation of the land. In particular, you can see that existing roads are often parallel to riverbeds.
@@ -312,7 +312,7 @@ Then, follow these instructions in QGIS to create the elevation map for our simu
 The resulting raster should look like this :
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
     ![](./imgs/coarse_elevation_correction_visualisation.jpg)
@@ -324,7 +324,7 @@ Now that the raster is done, you should be able to write the path to the `coarse
 The path should look like this in `roads.txt` :
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
     `CoarseElevationRaster "../shared-rasters/coarse_elevation.tif"`
@@ -348,7 +348,7 @@ To create the coarse water raster, follow these instructions in QGIS :
 - **Look at the resulting raster**. Do you notice anything important ?
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
     ![](./imgs/bad_water_rasterization.jpg)
@@ -368,7 +368,7 @@ To create the coarse water raster, follow these instructions in QGIS :
 The resulting raster should look like this :
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
     ![](./imgs/coarse_water_correction_visualisation.jpg)
@@ -380,7 +380,7 @@ Now that the raster is done, you should be able to write the path to the `coarse
 The path should look like this in `roads.txt`:
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
     `CoarseWaterRaster "../shared-rasters/coarse_hydrology.tif"`
@@ -404,7 +404,7 @@ Here, we will use the three road types present in the database of cost that we s
 The section describing the road types in `roads.txt` should look like this:
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
 ```
@@ -431,7 +431,7 @@ We will use use flux thresholds that we determined empirically, and that are of 
 The section describing the road types in `roads.txt` should look like this:
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
 ```
@@ -460,7 +460,7 @@ To compute those costs, simply execute in R or R studio the sections 10 and 11 o
 In the end, the parameters should look like this in `roads.txt`:
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
 ```
@@ -483,7 +483,7 @@ In our case, we will use ages specified in the classification of roads by the MF
 You can input those parameters in `roads.txt`, which will end the exercice. The parameters related to the road types should look like this:
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
 ```
@@ -504,7 +504,7 @@ Now that the exercice is over, you can check if you've filled the `roads.txt` fi
 Here is the content of `roads_correction.txt`:
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
 ```

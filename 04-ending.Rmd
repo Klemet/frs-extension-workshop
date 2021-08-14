@@ -1,14 +1,11 @@
 # Final word
 
 
-<center>
+<div style="font-family:Lato; font-size:30px; text-align: center !important; width: 100%  !important;">
 ![](./imgs/tom-parsons-F5qVefeCrp8-unsplash.jpg){width=50%}
 <br>
-<br>
 **Thank you for following this training workshop for the FRS module !**
-<br>
-<br>
-</center>
+</div>
 
 If you want to use it for your own research, you can find suggestion of parameterization methods in the article presenting the module [@hardyLANDISIIExtensionDynamically2021], as well as [the user guide](https://github.com/Klemet/LANDIS-II-Forest-Roads-Simulation-module/blob/master/LANDIS-II%20Forest%20Roads%20Simulation%20v1.1%20User%20Guide.pdf).
 

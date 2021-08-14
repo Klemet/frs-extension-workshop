@@ -67,7 +67,7 @@ The roadNetwork-Cost Raster.tif raster is a raster representing the "cost map" a
 Look at this raster. **Do you notice anything strange ?**
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
     Currently, all of the cells of the roadNetwork-Cost Raster.tif raster contain the same value, 894. This value is the basal distance cost that we found in section 2, exercice 6. This is because we inputed no cost parameter except the basal distance cost. Elevation, obstacles, water bodies, streams and soils are not taken into account. Therefore, from the point of view of the FRS module, the landscape is a plain, homogeneous area where the cost of construction doesn't change.
@@ -77,7 +77,7 @@ Look at this raster. **Do you notice anything strange ?**
 Now, look at the roadNetwork-60.tif raster, which contains a snapshot of the roads landscape at the end of the first timestep of the simulation. **Do you notice anything strange ?**
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
     ![](./imgs/roadNetwork-60_homogeneous_cost.jpg)
@@ -95,7 +95,7 @@ Relaunch the file run-scenario-no-aggregation.bat locateed in the folder scenari
 Look at roadNetwork-Cost Raster.tif in QGIS. Double click on the layer corresponding to it in the layer menu, and change its colors in the Symbology tab. What do you see ?
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
     ![](./imgs/cost_map_just_elevation.jpg)
@@ -107,7 +107,7 @@ Look at roadNetwork-Cost Raster.tif in QGIS. Double click on the layer correspon
 Now, look at the roadNetwork-60.tif raster in QGIS. Try to superimpose it to the cost map. What differences do you notice with what it was before ?
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
     ![](./imgs/roadNetwork-60_only_elevation.jpg)
@@ -125,7 +125,7 @@ Relaunch the file run-scenario-no-aggregation.bat locateed in the folder scenari
 Look at roadNetwork-Cost Raster.tif in QGIS. Double click on the layer corresponding to it in the layer menu, and change its colors in the Symbology tab. What do you see ?
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
     ![](./imgs/cost_map_elevation_hydrography.jpg)
@@ -138,7 +138,7 @@ Look at roadNetwork-Cost Raster.tif in QGIS. Double click on the layer correspon
 Now, look at the roadNetwork-60.tif raster in QGIS. Try to superimpose it to the cost map. What differences do you notice with what it was before ?
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
     ![](./imgs/roadNetwork-60_elevation_hydrography.jpg)
@@ -164,7 +164,7 @@ Then, run the file run-scenario-no-aggregation.bat located in the folder scenari
 Go into the scenario-no-aggregation/output/harvest folder, and load the raster prescripts-10.tif as a layer in LANDIS-II. Now, do the same for the scenario-with-aggregation folder. **What do you notice ?**
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
     We can see that the cut areas in the scenario with aggregation are fewer, but much bigger that the cut areas in the scenario without aggregation.
@@ -174,7 +174,7 @@ Go into the scenario-no-aggregation/output/harvest folder, and load the raster p
 Now, open the raster roadNetwork-60.tif from the scenario with and without aggregation in QGIS. **What differences do you notice between the two ?**
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
     We can see that in the scenario with aggregation, forest roads are less "scattered" than in the scenario without aggregation. They form dense networks of smaller roads inside the large cut areas, and link those together with higher-type roads traversing the landscape. In the scenario without aggregation, those patches of smaller roads corresponding to harvested areas are more scattered, leading to more higher-type roads linking them together.
@@ -190,10 +190,10 @@ Now, open the file correction-result-analysis located in the exercice-analyse-re
 Once that you have ran all of the commands of the section 5 of the script, look at the plot that the script have generated (showing the evolution of the road density in the landscape through time). **What do you notice ? How do you interpret it ?**
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
-  ![](./imgs/road_density.png)
+    ![](./imgs/road_density.png)
 
   We can see two things happening on the graph. First, we see a drastic decrease in the road density of the landscape, followed by a stabilisation showing a difference between the two scenarios.
 
@@ -204,10 +204,10 @@ Once that you have ran all of the commands of the section 5 of the script, look 
 Now, run the commands of the section 6. Look at the plot that the script have generated (showing the evolution of the road costs through time). **What do you notice ? How do you interpret it ?**
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
-  ![](./imgs/road_costs.png)
+    ![](./imgs/road_costs.png)
 
 In this graph, we see the same tendancy as the graph showing the evolution of the road density. It starts by a important decrease in costs of construction and repairs, followed by a relative stabilization of them through time.
 
@@ -224,11 +224,11 @@ The second part of the graph shows no clear differences between the scenario wit
 Now, run the commands of the section 7. Look at the plots that the script have generated (showing the evolution of the Clumpy and TCA fragmentation indices through time). **What do you notice ? How do you interpret it ?**
 
 * * *
-<details>
+<details style="text-align: left !important; width: 60%  !important;">
   <summary>**Click for Answer**</summary>
   <br>
-  ![](./imgs/Clumpy.png)
-  ![](./imgs/TCA.png)
+    ![](./imgs/Clumpy.png)
+    ![](./imgs/TCA.png)
 
 We can see that Clumpy and TCA are both slightly higher for the scenario with aggregation, implying less structural fragmentation of the landscape.
 
