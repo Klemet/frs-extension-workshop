@@ -18,7 +18,7 @@ description: "This webpage contains the content of a training workshop for the F
 </br>
 
 
-![](./imgs/Logo Module FRS.png)
+![](https://raw.githubusercontent.com/Klemet/LANDIS-II-Forest-Roads-Simulation-module/master/docs/FRS_module_logo.svg)
 </br>
 </div>
 
