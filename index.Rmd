@@ -1,28 +1,28 @@
 ---
-title: "The FRS Module Training Workshop"
-url: 'https://github.com/Klemet/Workshop-FRS-Module'
-github-repo: "Klemet/Workshop-FRS-Module"
-cover-image: "./imgs/Logo Module FRS.png"
+title: "The FRS extension Training Workshop"
+url: 'https://github.com/Klemet/Workshop-FRS-extension'
+github-repo: "Klemet/Workshop-FRS-extension"
+cover-image: "https://raw.githubusercontent.com/Klemet/LANDIS-II-Forest-Roads-Simulation-extension/master/webPageContent/assets/media/FRS_module_logo_v2.svg"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [bibliography-frs-module-workshop.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-description: "This webpage contains the content of a training workshop for the Forest Roads Simulation (FRS) module developed for the LANDIS-II model."
+description: "This webpage contains the content of a training workshop for the Forest Roads Simulation (FRS) extension developed for the LANDIS-II model."
 ---
 
 # Welcome {-}
 
 <div style="font-family:Lato; font-size:30px; text-align: center !important; width: 100%  !important;">
-**Welcome to the training workshop of the FRS module !**
+**Welcome to the training workshop of the FRS extension !**
 </br>
 
 
-![](https://raw.githubusercontent.com/Klemet/LANDIS-II-Forest-Roads-Simulation-module/master/docs/FRS_module_logo.svg)
+![](https://raw.githubusercontent.com/Klemet/LANDIS-II-Forest-Roads-Simulation-extension/master/webPageContent/assets/media/FRS_module_logo_v2.svg)
 </br>
 </div>
 
-The **Forest Roads Simulation (FRS) module** is an extension of the LANDIS-II Forest Landscape Model (FLM). It was created so as to **help researchers in ecology to take into account the constructions of forest roads** when studying the impacts of forest management on forest landscapes.
+The **Forest Roads Simulation (FRS) extension** is an extension of the LANDIS-II Forest Landscape Model (FLM). It was created so as to **help researchers in ecology to take into account the constructions of forest roads** when studying the impacts of forest management on forest landscapes.
 
 * * *
 
@@ -37,19 +37,19 @@ The **Forest Roads Simulation (FRS) module** is an extension of the LANDIS-II Fo
 
 ## Objectives
 
-**This workshop is here to train you to use the FRS module for your own research**, and to understand :
+**This workshop is here to train you to use the FRS extension for your own research**, and to understand :
 
-- `r emo::ji("check")` How the FRS module functions.
-- `r emo::ji("check")` How to parameterize the FRS module.
-- `r emo::ji("check")` How to visualize and analyse the outputs of the FRS module.
+- `r emo::ji("check")` How the FRS extension functions.
+- `r emo::ji("check")` How to parameterize the FRS extension.
+- `r emo::ji("check")` How to visualize and analyse the outputs of the FRS extension.
 
 ## Plan
 
 **This web page contains the content of the workshop**, which is organized into **three parts** :
 
-1. A presentation of the FRS module.
-2. An exercice to create the parameter files for a simulation using the FRS module.
-3. An exercise to visualise and analyse the outputs of simulations using the FRS module.
+1. A presentation of the FRS extension.
+2. An exercice to create the parameter files for a simulation using the FRS extension.
+3. An exercise to visualise and analyse the outputs of simulations using the FRS extension.
 
 ## Prerequisites
 
@@ -58,7 +58,7 @@ In order to do the exercices of the workshop, you will need the following softwa
 - [LANDIS-II v. 7](http://www.landis-ii.org/install)
   - [Age-only Succession Extension v. 5.2](https://github.com/LANDIS-II-Foundation/Extension-Age-Only-Succession/raw/master/deploy/installer/LANDIS-II-V7%20Age%20Only%20Succession%205.2-setup.exe)
   - [Base Harvest Extension v. 5.1](https://github.com/LANDIS-II-Foundation/Extension-Base-Harvest/raw/master/deploy/installer/LANDIS-II-V7%20Base%20Harvest%205.1-setup.exe)
-  - [FRS module v. 1.2](https://github.com/Klemet/LANDIS-II-Forest-Roads-Simulation-module/releases/download/1.2/LANDIS-II-V7.Forest.Road.Simulation.module.1.2-setup.exe)
+  - [FRS extension v. 1.3.1](https://github.com/Klemet/LANDIS-II-Forest-Roads-Simulation-extension/releases/download/1.2/LANDIS-II-V7.Forest.Road.Simulation.module.1.3.1-setup.exe)
 - [QGIS 3.X](https://qgis.org)
 - [R](https://www.r-project.org/) or [R studio](https://www.rstudio.com/)
   - Package `gtools`
@@ -81,4 +81,4 @@ In order to do the exercices of the workshop, you will need the following softwa
 
 I am a PhD student in forest ecology, under the supervision of [Elise Filotas](http://elisefilotas.ca/en/home/) and [Christian Messier](www.cef-cfr.ca/index.php?n=Membres.ChristianMessier?userlang=en).
 
-I am also the developer of the FRS module, and my PhD subject concerns the long-term and large scale impacts of uneven-aged management. If you want to learn more about it, check out my [GitHub page](https://github.com/Klemet) !
+I am also the developer of the FRS extension, and my PhD subject concerns the long-term and large scale impacts of uneven-aged management. If you want to learn more about it, check out my [GitHub page](https://github.com/Klemet) !

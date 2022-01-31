@@ -300,4 +300,3 @@ legend("topright",
        text.col = "black", 
        horiz = F , 
        inset = c(0.1, 0.1))
-

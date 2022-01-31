@@ -29,38 +29,38 @@ As you can see, forest roads can have many different impacts, and are important 
 
 * * *
 
-## The FRS module
+## The FRS extension
 
-The Forest Road Simulation (FRS) module is an extension for LANDIS-II, whose goal is to **dynamically simulate a forest road network according to the harvested areas in the landscape**.
+The Forest Road Simulation (FRS) extension is an extension for LANDIS-II, whose goal is to **dynamically simulate a forest road network according to the harvested areas in the landscape**.
 
-Here is an animation showing the evolution of road networks simulated with the FRS module in Quebec :
+Here is an animation showing the evolution of road networks simulated with the FRS extension in Quebec :
 
 <div style="font-family:Lato; font-size:30px; text-align: center !important; width: 100%  !important;">
 ![](./imgs/animation150Years.gif)
 </div>
 
-### Goals of the FRS module
+### Goals of the FRS extension
 
-The FRS module was designed with 4 considerations in mind :
+The FRS extension was designed with 4 considerations in mind :
 
 1. It should be easy to understand and use
 2. It should be able to reproduce the main characteristics of a real forest road network at the landscape scale
 3. It should not rely on low-level features of forest roads network that have limited influence at the landscape scale
 4. It should have a performance comparable to those of other LANDIS-II extensions
 
-We will now see how those considerations are tackled by the FRS module. However, if you want to know all of the details concerning the functioning and the performance of the module, you should read the article presenting the module [@hardyLANDISIIExtensionDynamically2021], as well as [the user guide](https://github.com/Klemet/LANDIS-II-Forest-Roads-Simulation-module/blob/master/LANDIS-II%20Forest%20Roads%20Simulation%20v1.1%20User%20Guide.pdf).
+We will now see how those considerations are tackled by the FRS extension. However, if you want to know all of the details concerning the functioning and the performance of the extension, you should read the article presenting the extension [@hardyLANDISIIExtensionDynamically2021], as well as [the user guide](https://github.com/Klemet/LANDIS-II-Forest-Roads-Simulation-extension/blob/master/LANDIS-II%20Forest%20Roads%20Simulation%20v1.1%20User%20Guide.pdf).
 
-### Structure of the FRS module
+### Structure of the FRS extension
 
-The FRS module interacts with the simulation made by LANDIS-II in a particular way. Indeed, in its current version, its functioning is influenced by the presence of areas harvested by a harvest extension. However, it does not influence the position of the harvested area, and it currently does not influence the forest landscape either.
+The FRS extension interacts with the simulation made by LANDIS-II in a particular way. Indeed, in its current version, its functioning is influenced by the presence of areas harvested by a harvest extension. However, it does not influence the position of the harvested area, and it currently does not influence the forest landscape either.
 
-As such, the FRS module edits its own particular spatial dataset in parallel to the vegetation map simulated by LANDIS-II. We call this dataset, which is a raster map with the same exact format as the other spatial data in LANDIS-II, the "road landscape".
+As such, the FRS extension edits its own particular spatial dataset in parallel to the vegetation map simulated by LANDIS-II. We call this dataset, which is a raster map with the same exact format as the other spatial data in LANDIS-II, the "road landscape".
 
-Hence, the FRS module creates roads on raster cells, using pathfinding algorithms. The roads that it creates are not vectorial, as this would require a lot more computations and parameters for a questionable gains in terms its ability to replicate reality.
+Hence, the FRS extension creates roads on raster cells, using pathfinding algorithms. The roads that it creates are not vectorial, as this would require a lot more computations and parameters for a questionable gains in terms its ability to replicate reality.
 
 ### Solving the MTAP
 
-To properly understand how the FRS module functions, one has to understand the Multiple Target Access Problem (MTAP). The MTAP is simply the problem of trying to reach multiple targets (nodes) in a graph via roads that link them (vertices) in an optimal way (least-cost, least-distance, best speed, etc.). As the number of targets increase, the number of possible configurations for the resulting road network becomes very great. How, then, can we find the optimal configuration according to a set of priorities ? Which roads (or vertices) should be built, and which ones should not ?
+To properly understand how the FRS extension functions, one has to understand the Multiple Target Access Problem (MTAP). The MTAP is simply the problem of trying to reach multiple targets (nodes) in a graph via roads that link them (vertices) in an optimal way (least-cost, least-distance, best speed, etc.). As the number of targets increase, the number of possible configurations for the resulting road network becomes very great. How, then, can we find the optimal configuration according to a set of priorities ? Which roads (or vertices) should be built, and which ones should not ?
 
 <div style="font-family:Lato; font-size:30px; text-align: center !important; width: 100%  !important;">
 ![](./imgs/MTAP.jpg)
@@ -82,21 +82,21 @@ The STAP can be easily solved with the use of a pathfinding algorithm, such as t
 
 Different heuristics can be used, in order to determine the set of STAP to solve [@shirasawaComparativeStudyHeuristic2014]. Such heuristics can be "make roads toward target nearest to a road first", or "make roads to and between targets in a random order".
 
-Note that in the MTAP, the targets are already determined. This makes the MTAP different from what is called an "integrated forest harvest-scheduling", which corresponds to finding the optimal location of areas to harvest, alongside an optimal configuration for the resulting forest road network [@heinimannForestRoadNetwork2017]. The FRS module doesn't go that far, and lets the harvest extensions of LANDIS-II decide where the harvested areas will be located.
+Note that in the MTAP, the targets are already determined. This makes the MTAP different from what is called an "integrated forest harvest-scheduling", which corresponds to finding the optimal location of areas to harvest, alongside an optimal configuration for the resulting forest road network [@heinimannForestRoadNetwork2017]. The FRS extension doesn't go that far, and lets the harvest extensions of LANDIS-II decide where the harvested areas will be located.
 
-Therefore, the FRS module solves an MTAP using a heuristics, and lets the user choose amongst three : "Closest first" (build roads to area closest to existing roads first); "Farthest first" (the opposite of "Closest first"); and "Random" (build roads to harvested areas in a random order). To determine the path of the roads in space, the FRS module uses the Dijkstra algorithm, along with a cost map.
+Therefore, the FRS extension solves an MTAP using a heuristics, and lets the user choose amongst three : "Closest first" (build roads to area closest to existing roads first); "Farthest first" (the opposite of "Closest first"); and "Random" (build roads to harvested areas in a random order). To determine the path of the roads in space, the FRS extension uses the Dijkstra algorithm, along with a cost map.
 
-## The functioning of the FRS module
+## The functioning of the FRS extension
 
-Now that we have seen the theory behind the design of the FRS module, we will quickly talk about its functioning. Again, readers interested in more details than what is given here can take a look at the article presenting the module [@hardyLANDISIIExtensionDynamically2021], as well as [the user guide](https://github.com/Klemet/LANDIS-II-Forest-Roads-Simulation-module/blob/master/LANDIS-II%20Forest%20Roads%20Simulation%20v1.1%20User%20Guide.pdf).
+Now that we have seen the theory behind the design of the FRS extension, we will quickly talk about its functioning. Again, readers interested in more details than what is given here can take a look at the article presenting the extension [@hardyLANDISIIExtensionDynamically2021], as well as [the user guide](https://github.com/Klemet/LANDIS-II-Forest-Roads-Simulation-extension/blob/master/LANDIS-II%20Forest%20Roads%20Simulation%20v1.1%20User%20Guide.pdf).
 
 ### Initialisation phase
 
 LANDIS-II simulations always start with an initialisation phase, during which the different rasters needed by the model are read, the parameters read, and the different extensions prepared for the rest of the simulation.
 
-The FRS module uses the initialisation phase to create what is called the "cost map". **The cost map is a raster map in which each pixel represent the estimated cost of construction to construct a road in order to cross the pixel, whatever the direction of the crossing**.
+The FRS extension uses the initialisation phase to create what is called the "cost map". **The cost map is a raster map in which each pixel represent the estimated cost of construction to construct a road in order to cross the pixel, whatever the direction of the crossing**.
 
-Here is an example of a cost map generated by the FRS module :
+Here is an example of a cost map generated by the FRS extension :
 
 <div style="font-family:Lato; font-size:30px; text-align: center !important; width: 100%  !important;">
 ![](./imgs/cost_raster.png)
@@ -104,9 +104,9 @@ Here is an example of a cost map generated by the FRS module :
 
 On this cost map, you can see water bodies very clearly, as they require constructing bridges that can be very costly to construct, or even prohibited depending on the legislation in place. The path of streams are visible, as they require one or multiple culverts to be posed to traverse them. Then, you can see that the costs of constructions change according to the slope.
 
-To create such a map, the FRS module uses maps of landscape features and several cost parameters associated to them. Only one landscape feature - and its associated parameters - is necessary; the others are optional, in order to adapt to what data the user has at hand. However, the more features are taken into account, the more the roads created by the module will be realistic.
+To create such a map, the FRS extension uses maps of landscape features and several cost parameters associated to them. Only one landscape feature - and its associated parameters - is necessary; the others are optional, in order to adapt to what data the user has at hand. However, the more features are taken into account, the more the roads created by the extension will be realistic.
 
-Currently, the FRS module can take into account :
+Currently, the FRS extension can take into account :
 
 - The slope
 - The presence of topographic obstacles requiring a detour (cliffs, breaks, etc.)
@@ -114,21 +114,21 @@ Currently, the FRS module can take into account :
 - The presence of streams
 - The types of soil
 
-Once that the cost map has been created, the FRS module ends up the initialisation phase by "completing" the initial road network map that has been given by the user. Indeed, this map should contain existing roads and forest roads, alongside what we called "**exit points**". This category is considered by the module as places where the wood harvested in the landscape can “exit” the landscape (to be sold or used). Every initial road landscape must have at least one site of this category, as **the FRS module has for objective to connect harvested areas to exit points, or to roads that are connected to exit points themselves**. Currently, exit points are static throughout the simulation: they are not created or deleted through time.
+Once that the cost map has been created, the FRS extension ends up the initialisation phase by "completing" the initial road network map that has been given by the user. Indeed, this map should contain existing roads and forest roads, alongside what we called "**exit points**". This category is considered by the extension as places where the wood harvested in the landscape can “exit” the landscape (to be sold or used). Every initial road landscape must have at least one site of this category, as **the FRS extension has for objective to connect harvested areas to exit points, or to roads that are connected to exit points themselves**. Currently, exit points are static throughout the simulation: they are not created or deleted through time.
 
-If some roads in the initial road landscape are not connected to any exit points, the FRS module will "complete" the network by adding new road segments so that they are connected. This is done in order to correct possible missing roads in road databases.
+If some roads in the initial road landscape are not connected to any exit points, the FRS extension will "complete" the network by adding new road segments so that they are connected. This is done in order to correct possible missing roads in road databases.
 
 ### During the simulation
 
 Once that the initialisation phase of LANDIS-II is other, the simulation starts. Each extension of LANDIS-II are called, according to their time step.
 
-The FRS module should be parameterized to always be called after the harvest extension has been activated. Once that it activates, the FRS module functions this way :
+The FRS extension should be parameterized to always be called after the harvest extension has been activated. Once that it activates, the FRS extension functions this way :
 
-1. If road aging has been activated, the FRS module will age the roads of the landscape. If the roads become older than their maximum age of use, they are considered destroyed. Every road starts at an age 0 when constructed, and this age is only reset when a road is updated (see below). If a road is destroyed and then rebuilt in the same timestep, it is considered as repaired.
+1. If road aging has been activated, the FRS extension will age the roads of the landscape. If the roads become older than their maximum age of use, they are considered destroyed. Every road starts at an age 0 when constructed, and this age is only reset when a road is updated (see below). If a road is destroyed and then rebuilt in the same timestep, it is considered as repaired.
 2. The cells recently harvested by the harvest extension are ordered according to the heuristic chosen by the user. Hence, each cell represents a target to reach in the MTAP.
 3. Roads are constructed to the recently harvested cell, by considering them in their order. However, a road is only built if the given harvested cell is not already at a skidding distance from an existing road. In that case, the wood is considered as skidded to the nearby road pixel. Roads that are built must lead to the recently harvested cell of interest, but can start from any existing road pixel, as long as this road pixel is connected one way or another to an exit point.
-4. If the loop algorithm is activated, the FRS module will attempt to create a loop in the road network. It does this by creating a second road to the recently harvested cell. This can be important for certain fragmentation indices that are sensitive to the existence of "patches" that are completely surrounded by roads or by non-forest habitat.
-5. If the harvest extension is parameterized to use repeated harvested (e.g. shelterwood harvest or periodic uneven-aged cuts), then the FRS module will adapt to the need to return to the harvested cell in the futur. In particular, the module will chose the cheapest option between creating a low-grade road that might need to be re-built or repaired for the next passage; or a higher-grade road, more costly, that will still be in place next time.
-6. Finally, if the computation of wood fluxes is activated, the FRS module will simulate the transport of wood from the harvested area to the exit points of the landscape. This flux will influence the way that forest roads are upgraded to larger, higher-grade roads to adapt to the flux of trucks.
+4. If the loop algorithm is activated, the FRS extension will attempt to create a loop in the road network. It does this by creating a second road to the recently harvested cell. This can be important for certain fragmentation indices that are sensitive to the existence of "patches" that are completely surrounded by roads or by non-forest habitat.
+5. If the harvest extension is parameterized to use repeated harvested (e.g. shelterwood harvest or periodic uneven-aged cuts), then the FRS extension will adapt to the need to return to the harvested cell in the futur. In particular, the extension will chose the cheapest option between creating a low-grade road that might need to be re-built or repaired for the next passage; or a higher-grade road, more costly, that will still be in place next time.
+6. Finally, if the computation of wood fluxes is activated, the FRS extension will simulate the transport of wood from the harvested area to the exit points of the landscape. This flux will influence the way that forest roads are upgraded to larger, higher-grade roads to adapt to the flux of trucks.
 
-Once that all of this is done, the FRS module creates raster maps corresponding to snapshots of the road landscape at the end of the time step, and then stops until the next time step when it will be activated.
+Once that all of this is done, the FRS extension creates raster maps corresponding to snapshots of the road landscape at the end of the time step, and then stops until the next time step when it will be activated.

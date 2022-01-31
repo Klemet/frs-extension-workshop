@@ -10,7 +10,7 @@ bookdown::gitbook:
     toc:
       scroll_highlight: yes
       before: |
-        <li class='before'><a href="./">FRS module workshop</a></li>
+        <li class='before'><a href="./">FRS extension workshop</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
     download: ["pdf", "epub"]
