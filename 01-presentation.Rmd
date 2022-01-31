@@ -48,7 +48,7 @@ The FRS extension was designed with 4 considerations in mind :
 3. It should not rely on low-level features of forest roads network that have limited influence at the landscape scale
 4. It should have a performance comparable to those of other LANDIS-II extensions
 
-We will now see how those considerations are tackled by the FRS extension. However, if you want to know all of the details concerning the functioning and the performance of the extension, you should read the article presenting the extension [@hardyLANDISIIExtensionDynamically2021], as well as [the user guide](https://github.com/Klemet/LANDIS-II-Forest-Roads-Simulation-extension/blob/master/LANDIS-II%20Forest%20Roads%20Simulation%20v1.1%20User%20Guide.pdf).
+We will now see how those considerations are tackled by the FRS extension. However, if you want to know all of the details concerning the functioning and the performance of the extension, you should read the article presenting the extension [@hardyLANDISIIExtensionDynamically2021], as well as [the user guide](https://github.com/Klemet/LANDIS-II-Forest-Roads-Simulation-extension/raw/master/docs/LANDIS-II%20Forest%20Roads%20Simulation%20v1.3.1%20User%20Guide.pdf).
 
 ### Structure of the FRS extension
 
@@ -88,7 +88,7 @@ Therefore, the FRS extension solves an MTAP using a heuristics, and lets the use
 
 ## The functioning of the FRS extension
 
-Now that we have seen the theory behind the design of the FRS extension, we will quickly talk about its functioning. Again, readers interested in more details than what is given here can take a look at the article presenting the extension [@hardyLANDISIIExtensionDynamically2021], as well as [the user guide](https://github.com/Klemet/LANDIS-II-Forest-Roads-Simulation-extension/blob/master/LANDIS-II%20Forest%20Roads%20Simulation%20v1.1%20User%20Guide.pdf).
+Now that we have seen the theory behind the design of the FRS extension, we will quickly talk about its functioning. Again, readers interested in more details than what is given here can take a look at the article presenting the extension [@hardyLANDISIIExtensionDynamically2021], as well as [the user guide](https://github.com/Klemet/LANDIS-II-Forest-Roads-Simulation-extension/raw/master/docs/LANDIS-II%20Forest%20Roads%20Simulation%20v1.3.1%20User%20Guide.pdf).
 
 ### Initialisation phase
 

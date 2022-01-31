@@ -7,7 +7,7 @@
 **Thank you for following this training workshop for the FRS extension !**
 </div>
 
-If you want to use it for your own research, you can find suggestion of parameterization methods in the article presenting the extension [@hardyLANDISIIExtensionDynamically2021], as well as [the user guide](https://github.com/Klemet/LANDIS-II-Forest-Roads-Simulation-extension/blob/master/LANDIS-II%20Forest%20Roads%20Simulation%20v1.1%20User%20Guide.pdf).
+If you want to use it for your own research, you can find suggestion of parameterization methods in the article presenting the extension [@hardyLANDISIIExtensionDynamically2021], as well as [the user guide](https://github.com/Klemet/LANDIS-II-Forest-Roads-Simulation-extension/raw/master/docs/LANDIS-II%20Forest%20Roads%20Simulation%20v1.3.1%20User%20Guide.pdf).
 
 If you have any questions related to the functionning of the extension, you can send me an e-mail at [clem.hardy@outlook.fr](mailto:clem.hardy@outlook.fr).
 
